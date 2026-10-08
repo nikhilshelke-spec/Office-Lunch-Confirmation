@@ -1,0 +1,3590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Onix Cafeteria | Lunch Booking & Menu Portal</title>
+  <meta name="theme-color" content="#30496d">
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+  <style>
+    :root {
+      --primary: #30496d;
+      --primary-dark: #22344e;
+      --primary-light: #43628e;
+      --accent: #f46262;
+      --accent-hover: #e04f4f;
+      --accent-light: #ffeaea;
+      --veg: #10b981;
+      --veg-light: #ecfdf5;
+      --nonveg: #ef4444;
+      --nonveg-light: #fef2f2;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(48, 73, 109, 0.08);
+      --shadow-lg: 0 10px 25px rgba(48, 73, 109, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #ffffff;
+      padding: 14px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .header-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-img {
+      height: 38px;
+      width: auto;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 4px 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      object-fit: contain;
+    }
+
+    .brand-text h1 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-text p {
+      font-size: 0.72rem;
+      color: #cbd5e1;
+      font-weight: 400;
+    }
+
+    .role-switch-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .role-switch-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Cutoff Bar */
+    .cutoff-banner {
+      background: linear-gradient(90deg, #fff1f2, #ffe4e6);
+      border-bottom: 1px solid #fecdd3;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      color: #9f1239;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .cutoff-timer {
+      background: var(--accent);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #ffffff;
+      padding: 6px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      gap: 4px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 10px 6px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn .tab-icon {
+      font-size: 1.2rem;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(48, 73, 109, 0.25);
+    }
+
+    /* Common Card Styles */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: -6px;
+      margin-bottom: 16px;
+    }
+
+    /* Booking Form */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: #ffffff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(48, 73, 109, 0.1);
+    }
+
+    /* Meal Choice Options */
+    .meal-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .meal-radio-card {
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #ffffff;
+    }
+
+    .meal-radio-card:hover {
+      border-color: #cbd5e1;
+    }
+
+    .meal-radio-card.selected-veg {
+      border-color: var(--veg);
+      background: var(--veg-light);
+    }
+
+    .meal-radio-card.selected-nonveg {
+      border-color: var(--nonveg);
+      background: var(--nonveg-light);
+    }
+
+    .meal-radio-card.selected-optout {
+      border-color: #94a3b8;
+      background: #f1f5f9;
+    }
+
+    .meal-radio-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .meal-radio-card .label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .meal-radio-card .subtext {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      display: block;
+    }
+
+    /* Button Primary */
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(244, 98, 98, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: rgba(48, 73, 109, 0.05);
+    }
+
+    /* Walk-in notice card */
+    .walkin-notice {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: #92400e;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    /* Menu Preview Box */
+    .menu-preview-box {
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .menu-preview-box h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .menu-preview-box p {
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    /* Weekly Menu Table / Cards */
+    .week-toggle {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .week-toggle-btn {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .week-toggle-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .menu-day-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .menu-day-card.today-highlight {
+      border-color: var(--accent);
+      background: #fffcfc;
+      box-shadow: 0 2px 8px rgba(244, 98, 98, 0.15);
+    }
+
+    .menu-day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .menu-day-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .day-badge {
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-today {
+      background: var(--accent);
+      color: white;
+    }
+
+    .badge-tomorrow {
+      background: var(--primary);
+      color: white;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 8px;
+      font-size: 0.82rem;
+    }
+
+    .menu-item-row {
+      background: #f8fafc;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+
+    .menu-item-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .menu-item-value {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .menu-item-value.empty {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+    /* Digital Meal Pass */
+    .meal-pass-card {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a2a40 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 20px;
+    }
+
+    .pass-watermark {
+      position: absolute;
+      right: -20px;
+      bottom: -30px;
+      font-size: 8rem;
+      opacity: 0.05;
+      font-weight: 900;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .pass-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px dashed rgba(255,255,255,0.2);
+      padding-bottom: 12px;
+    }
+
+    .pass-type-badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .pass-badge-veg {
+      background: #10b981;
+      color: #ffffff;
+    }
+
+    .pass-badge-nonveg {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .pass-code-box {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      margin: 16px 0;
+    }
+
+    .pass-token-title {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #94a3b8;
+    }
+
+    .pass-token-code {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      margin: 4px 0;
+      font-family: monospace;
+    }
+
+    .pass-qr-sim {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .barcode-lines {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 36px;
+      background: white;
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+
+    .bar {
+      background: #000;
+      height: 100%;
+      width: 2px;
+    }
+
+    .bar.thick {
+      width: 4px;
+    }
+
+    /* Rating Stars */
+    .star-rating {
+      display: flex;
+      gap: 8px;
+      font-size: 2rem;
+      color: #cbd5e1;
+      cursor: pointer;
+      margin: 10px 0 16px;
+    }
+
+    .star-rating .star.filled {
+      color: #f59e0b;
+    }
+
+    .feedback-tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .feedback-tag {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .feedback-tag.selected {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* Staff Login Dashboard */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+
+    .metric-val {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .metric-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Modal for PIN Login */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #ffffff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 400px;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    @keyframes scanLaser {
+      0% { top: 10px; opacity: 0.8; }
+      50% { top: 90%; opacity: 1; }
+      100% { top: 10px; opacity: 0.8; }
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e293b;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 2000;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Fullscreen Pass Modal */
+    .fullscreen-pass {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #0f172a;
+      z-index: 3000;
+      padding: 24px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .fullscreen-pass.active {
+      display: flex;
+    }
+
+    /* Table styles */
+    .table-responsive {
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border);
+      padding: 16px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      background: #f1f5f9;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+
+    @media (max-width: 600px) {
+      .nav-tabs {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .tab-btn span.tab-text {
+        font-size: 0.68rem;
+      }
+      .card {
+        padding: 16px;
+      }
+      .pass-token-code {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-wrap">
+        <img src="data:image/png;base64,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" alt="Onix" class="brand-logo-img">
+        <div class="brand-text">
+          <h1>Onix Cafeteria</h1>
+          <p>Lunch Booking & Menu System</p>
+        </div>
+      </div>
+      <div>
+        <button class="role-switch-btn" onclick="openLoginModal()">
+          <span>🔒</span>
+          <span id="role-display-text">Staff Login</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cutoff Banner (Daily 11:59 PM) -->
+  <div class="cutoff-banner">
+    <span>⏰ <strong>Tomorrow's Lunch Booking Cutoff:</strong> Today 11:59 PM EOD</span>
+    <span class="cutoff-timer" id="cutoff-clock">Calculating...</span>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- EMPLOYEE PORTAL VIEW -->
+    <div id="view-employee">
+      
+      <!-- Tabs -->
+      <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchEmpTab('booking')">
+          <span class="tab-icon">🍱</span>
+          <span class="tab-text">Book Tomorrow</span>
+        </button>
+        <button class="tab-btn" onclick="switchEmpTab('menu')">
+          <span class="tab-icon">📅</span>
+          <span class="tab-text">Weekly Menu</span>
+        </button>
+        <button class="tab-btn" onclick="switchEmpTab('pass')">
+          <span class="tab-icon">🎫</span>
+          <span class="tab-text">My Meal Pass</span>
+        </button>
+        <button class="tab-btn" onclick="switchEmpTab('feedback')">
+          <span class="tab-icon">✍️</span>
+          <span class="tab-text">Food Feedback</span>
+        </button>
+      </div>
+
+      <!-- TAB 1: BOOKING FOR TOMORROW -->
+      <div id="tab-booking" class="tab-content">
+        <div class="card">
+          <div class="card-title">
+            <span>🍱 Advance Lunch Booking</span>
+          </div>
+          <p class="card-subtitle" id="booking-target-date-text">Booking for Tomorrow: Thursday, Oct 8</p>
+
+          <!-- Tomorrow Menu Sneak Peek -->
+          <div class="menu-preview-box" id="tomorrow-menu-box">
+            <h4>Tomorrow's Planned Menu</h4>
+            <p id="tomorrow-menu-desc">Loading tomorrow's menu...</p>
+          </div>
+
+          <!-- Cutoff Closed Alert (Dynamic) -->
+          <div id="booking-closed-alert" style="display:none;" class="walkin-notice" style="background:#fee2e2; border-color:#fca5a5; color:#991b1b;">
+            <span>🔒</span>
+            <div>
+              <strong>Booking for tomorrow is now closed!</strong><br>
+              The cutoff was 11:59 PM tonight. Don't worry, please visit the physical register counter in the cafeteria tomorrow to get a buffer meal.
+            </div>
+          </div>
+
+          <form id="lunch-booking-form" onsubmit="handleBookingSubmit(event); return false;">
+            
+            <!-- Booking Period / Bulk Duration Selector -->
+            <div class="form-group" style="background:#f1f5f9; border:1px solid #cbd5e1; border-radius:10px; padding:14px; margin-bottom:16px;">
+              <label style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span>🗓️ Booking Duration (Bulk Advance Booking)</span>
+                <span style="font-size:0.72rem; color:#047857; background:#dcfce7; padding:2px 8px; border-radius:10px; font-weight:700;">Sat & Sun Excluded</span>
+              </label>
+              
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:8px; margin-bottom:10px;">
+                <div class="meal-radio-card selected-veg" id="period-tomorrow" onclick="selectBookingPeriod('tomorrow')" style="padding:10px 6px;">
+                  <span style="font-size:1.1rem; display:block;">📅</span>
+                  <span style="font-size:0.8rem; font-weight:700; display:block;">Tomorrow Only</span>
+                  <span style="font-size:0.68rem; color:var(--text-muted); display:block;" id="label-tomorrow-date">1 Day</span>
+                </div>
+                <div class="meal-radio-card" id="period-thisweek" onclick="selectBookingPeriod('thisweek')" style="padding:10px 6px;">
+                  <span style="font-size:1.1rem; display:block;">🗓️</span>
+                  <span style="font-size:0.8rem; font-weight:700; display:block;">Rest of This Week</span>
+                  <span style="font-size:0.68rem; color:var(--text-muted); display:block;">Mon-Fri Remaining</span>
+                </div>
+                <div class="meal-radio-card" id="period-nextweek" onclick="selectBookingPeriod('nextweek')" style="padding:10px 6px;">
+                  <span style="font-size:1.1rem; display:block;">🚀</span>
+                  <span style="font-size:0.8rem; font-weight:700; display:block;">Full Next Week</span>
+                  <span style="font-size:0.68rem; color:var(--text-muted); display:block;">5 Working Days</span>
+                </div>
+                <div class="meal-radio-card" id="period-month" onclick="selectBookingPeriod('month')" style="padding:10px 6px;">
+                  <span style="font-size:1.1rem; display:block;">📆</span>
+                  <span style="font-size:0.8rem; font-weight:700; display:block;">Whole Month</span>
+                  <span style="font-size:0.68rem; color:var(--text-muted); display:block;">All Working Days</span>
+                </div>
+              </div>
+
+              <!-- Selected Dates Summary Badge -->
+              <div id="selected-dates-summary" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:8px; padding:8px 12px; font-size:0.78rem; color:#30496d;">
+                <strong>Selected Dates:</strong> <span id="selected-dates-text">Calculating dates...</span>
+              </div>
+            </div>
+
+
+
+            <div class="form-group">
+              <label>Select Lunch Preference for Tomorrow *</label>
+              <div class="meal-options" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="meal-radio-card selected-veg" id="option-veg" onclick="selectMealOption('veg')">
+                  <span class="icon">🥗</span>
+                  <span class="label">Pure Veg</span>
+                  <span class="subtext">Dal, Rice, Sabji, Roti</span>
+                </div>
+                <div class="meal-radio-card" id="option-nonveg" onclick="selectMealOption('nonveg')">
+                  <span class="icon">🍗</span>
+                  <span class="label">Non-Veg</span>
+                  <span class="subtext">Chicken/Egg + Sides</span>
+                </div>
+              </div>
+              <input type="hidden" id="selected-meal-type" value="veg">
+            </div>
+
+
+
+            <button type="button" class="btn btn-primary" id="btn-submit-booking" onclick="handleBookingSubmit(event)">
+              <span>✅ Confirm Tomorrow's Booking</span>
+            </button>
+          </form>
+
+          <!-- Walk-in Fallback Banner -->
+          <div class="walkin-notice">
+            <span style="font-size:1.2rem;">ℹ️</span>
+            <div>
+              <strong>Forgot to book yesterday for today's lunch?</strong><br>
+              A physical register is kept at the cafeteria counter. You can write your name there and take lunch from the vendor's daily walk-in buffer stock.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: WEEKLY MENU -->
+      <div id="tab-menu" class="tab-content" style="display:none;">
+        <div class="card">
+          <div class="card-title">
+            <span>📅 Weekly Cafeteria Menu</span>
+          </div>
+          <p class="card-subtitle">Prepared fresh by our vendor. Updated weekly.</p>
+
+          <div class="week-toggle">
+            <button class="week-toggle-btn active" id="btn-this-week" onclick="toggleWeekView('this')">This Week (Current)</button>
+            <button class="week-toggle-btn" id="btn-next-week" onclick="toggleWeekView('next')">Next Week (Upcoming)</button>
+          </div>
+
+          <div id="menu-cards-container">
+            <!-- Dynamically populated days -->
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: DIGITAL MEAL PASS -->
+      <div id="tab-pass" class="tab-content" style="display:none;">
+        <div class="card">
+          <div class="card-title">
+            <span>🎫 Today's Meal Pass</span>
+          </div>
+          <p class="card-subtitle">Show this digital verification pass to the vendor at the serving counter.</p>
+
+          <div id="active-pass-container">
+            <!-- Dynamically rendered pass -->
+          </div>
+
+          <button class="btn btn-outline" onclick="openFullscreenPass()">
+            <span>📱 Full Screen Mode (Show to Vendor)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 4: FOOD FEEDBACK -->
+      <div id="tab-feedback" class="tab-content" style="display:none;">
+        <div class="card">
+          <div class="card-title">
+            <span>✍️ Today's Lunch Feedback</span>
+          </div>
+          <p class="card-subtitle">Your ratings help our food committee & vendor improve meal quality daily.</p>
+
+          <form onsubmit="handleFeedbackSubmit(event)">
+            <div class="form-group">
+              <label>How was today's lunch overall?</label>
+              <div class="star-rating" id="rating-stars">
+                <span class="star filled" onclick="setStarRating(1)">★</span>
+                <span class="star filled" onclick="setStarRating(2)">★</span>
+                <span class="star filled" onclick="setStarRating(3)">★</span>
+                <span class="star filled" onclick="setStarRating(4)">★</span>
+                <span class="star" onclick="setStarRating(5)">★</span>
+              </div>
+              <input type="hidden" id="feedback-stars-val" value="4">
+            </div>
+
+            <div class="form-group">
+              <label>Quick Tags</label>
+              <div class="feedback-tag-group">
+                <span class="feedback-tag selected" onclick="toggleTag(this)">😋 Delicious Taste</span>
+                <span class="feedback-tag" onclick="toggleTag(this)">🥗 Fresh Salad</span>
+                <span class="feedback-tag selected" onclick="toggleTag(this)">🍛 Right Quantity</span>
+                <span class="feedback-tag" onclick="toggleTag(this)">🧂 Low Salt Needed</span>
+                <span class="feedback-tag" onclick="toggleTag(this)">🌶️ Too Spicy</span>
+                <span class="feedback-tag" onclick="toggleTag(this)">🧼 Good Hygiene</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="feedback-dish-comment">Specific Dish Review / Comments</label>
+              <textarea id="feedback-dish-comment" rows="3" placeholder="e.g. Dal Tadka was great, but sabji was slightly oily..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="feedback-name">Your Name (Optional - leave blank to remain anonymous)</label>
+              <input type="text" id="feedback-name" placeholder="Anonymous or Your Name">
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <span>🚀 Submit Feedback to Vendor & Committee</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- VENDOR DASHBOARD VIEW (Protected) -->
+    <div id="view-vendor" style="display:none;">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div class="card-title" style="margin-bottom:0;">
+            <span>👨‍🍳 Vendor Kitchen Operations</span>
+          </div>
+          <button class="role-switch-btn" style="background:var(--primary); color:white;" onclick="switchRole('employee')">
+            ← Back to Employee
+          </button>
+        </div>
+        <p class="card-subtitle">Real-time headcounts, weekly menu updates & feedback reviews.</p>
+
+        <!-- Live Serving Summary (Today & Current Month) -->
+        <h3 style="font-size:0.95rem; margin-bottom:10px; color:var(--primary); display:flex; justify-content:space-between; align-items:center;">
+          <span>🍽️ Live Meal Serving Summary</span>
+          <span style="font-size:0.72rem; color:#047857; background:#dcfce7; padding:2px 8px; border-radius:10px; font-weight:700;">Active Serving</span>
+        </h3>
+        <div class="metric-grid" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); margin-bottom:16px;">
+          <div class="metric-card" style="border-top: 4px solid #10b981;">
+            <div class="metric-val" id="vendor-today-served-count" style="color:#10b981;">0</div>
+            <div class="metric-label">Today Served (Ate)</div>
+            <div style="font-size:0.72rem; color:#64748b; margin-top:2px;" id="vendor-today-veg-nonveg">Veg: 0 | Non-Veg: 0</div>
+          </div>
+          <div class="metric-card" style="border-top: 4px solid #f59e0b;">
+            <div class="metric-val" id="vendor-today-pending-count" style="color:#f59e0b;">0</div>
+            <div class="metric-label">Today Pending</div>
+            <div style="font-size:0.72rem; color:#64748b; margin-top:2px;">Yet to Collect</div>
+          </div>
+          <div class="metric-card" style="border-top: 4px solid #30496d;">
+            <div class="metric-val" id="vendor-month-served-count" style="color:#30496d;">0</div>
+            <div class="metric-label">Current Month Served</div>
+            <div style="font-size:0.72rem; color:#64748b; margin-top:2px;" id="vendor-month-veg-nonveg">Veg: 0 | Non-Veg: 0</div>
+          </div>
+        </div>
+
+        <!-- Tomorrow Headcount Summary -->
+        <h3 style="font-size:0.95rem; margin-bottom:10px; color:var(--primary);">🎯 Headcount for Tomorrow's Lunch</h3>
+        <div class="metric-grid">
+          <div class="metric-card" style="border-top: 4px solid var(--primary);">
+            <div class="metric-val" id="vendor-headcount-total">0</div>
+            <div class="metric-label">Total Required</div>
+          </div>
+          <div class="metric-card" style="border-top: 4px solid var(--veg);">
+            <div class="metric-val" id="vendor-headcount-veg" style="color:var(--veg);">0</div>
+            <div class="metric-label">🟢 Veg Meals</div>
+          </div>
+          <div class="metric-card" style="border-top: 4px solid var(--nonveg);">
+            <div class="metric-val" id="vendor-headcount-nonveg" style="color:var(--nonveg);">0</div>
+            <div class="metric-label">🔴 Non-Veg Meals</div>
+          </div>
+          <div class="metric-card" style="border-top: 4px solid #f59e0b;">
+            <div class="metric-val" id="vendor-headcount-buffer" style="color:#f59e0b;">+0</div>
+            <div class="metric-label">+10% Buffer Walk-in</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-bottom:20px;">
+          <button class="btn btn-outline" style="font-size:0.82rem; padding:8px 14px;" onclick="window.print()">
+            🖨️ Print Kitchen Preparation Slip
+          </button>
+        </div>
+
+        <hr style="border:none; border-top:1px solid var(--border); margin: 20px 0;">
+
+        <!-- LIVE MEAL PASS QR SCANNER & FOOD SERVING STATION -->
+        <div style="background:#f8fafc; border:2px solid #30496d; border-radius:12px; padding:16px; margin-bottom:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <div class="card-title" style="margin-bottom:0; font-size:1.05rem;">
+              <span>📷 Meal Pass QR Scanner & Serving Station</span>
+            </div>
+            <span style="background:#10b981; color:white; font-size:0.72rem; padding:3px 10px; border-radius:12px; font-weight:800;">LIVE COUNTER</span>
+          </div>
+          <p class="card-subtitle" style="margin-bottom:12px;">Scan employee's Meal Pass QR code or type token to mark food as Served instantly.</p>
+
+          <!-- Scanner Input & Controls -->
+          <div style="display:flex; gap:8px; margin-bottom:12px;">
+            <input type="text" id="vendor-scan-input" placeholder="Type Daily Token (e.g. A01, A19)..." style="font-size:1.05rem; font-weight:800; border:2px solid #30496d; padding:12px; text-transform:uppercase;" onkeypress="if(event.key==='Enter') executeVendorScan();">
+            <button class="btn btn-primary" style="width:auto; padding:0 22px; font-size:0.9rem; font-weight:700;" onclick="executeVendorScan()">
+              Mark Served ✅
+            </button>
+          </div>
+
+          <!-- Camera Scanner Controls -->
+          <div style="display:flex; gap:10px; margin-bottom:12px;">
+            <button class="btn btn-outline" style="font-size:0.82rem; padding:8px 16px; font-weight:700; color:#30496d; border-color:#30496d;" onclick="toggleCameraScanner()">
+              📷 Open Camera QR Scanner
+            </button>
+          </div>
+
+          <!-- Camera Stream Container with Laser Reticle -->
+          <div id="camera-scanner-container" style="display:none; text-align:center; background:#0f172a; border-radius:12px; padding:16px; margin-bottom:16px; border:2px solid #10b981;">
+            <div style="position:relative; width:100%; max-width:320px; height:260px; margin:0 auto; overflow:hidden; border-radius:8px; background:#000;">
+              <video id="camera-video-preview" style="width:100%; height:100%; object-fit:cover;" playsinline autoplay muted></video>
+              <div style="position:absolute; inset:25px; border:2px dashed #10b981; border-radius:12px; pointer-events:none;"></div>
+              <div style="position:absolute; top:25px; left:25px; right:25px; height:3px; background:#10b981; box-shadow:0 0 10px #10b981; animation:scanLaser 2s infinite linear; pointer-events:none;"></div>
+            </div>
+            <p style="color:#cbd5e1; font-size:0.78rem; margin-top:8px;">Point camera at employee's Meal Pass QR code</p>
+            <button class="btn btn-outline" style="width:auto; margin:8px auto 0; color:white; border-color:#cbd5e1; font-size:0.75rem; padding:4px 14px;" onclick="stopCameraScanner()">✕ Close Camera</button>
+          </div>
+
+          <!-- Live Scan Result Notification Banner -->
+          <div id="scan-feedback-banner" style="display:none; padding:14px; border-radius:10px; font-size:0.9rem; font-weight:700; margin-bottom:12px;"></div>
+
+          <!-- Quick Tap-to-Serve Live Queue (Today's Bookings) -->
+          <h4 style="font-size:0.85rem; color:#30496d; margin:14px 0 8px;">📋 Today's Queue (Click to Mark Served):</h4>
+          <div id="vendor-live-queue" style="max-height:220px; overflow-y:auto; border:1px solid #e2e8f0; border-radius:8px; background:white;">
+            <!-- Dynamically populated queue -->
+          </div>
+        </div>
+
+        <!-- SERVED ANALYTICS & FILTERS (DAILY, WEEKLY, MONTHLY) -->
+        <div class="card-title" style="margin-bottom:6px;">
+          <span>📊 Meal Serving Analytics & Reports</span>
+        </div>
+        <p class="card-subtitle">Filter how many employees actually ate lunch daily, weekly, or monthly.</p>
+
+        <!-- Time Range Filters -->
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+          <button class="week-toggle-btn active" id="filter-btn-today" onclick="filterServedData('today')">📅 Today (Daily)</button>
+          <button class="week-toggle-btn" id="filter-btn-thisweek" onclick="filterServedData('thisweek')">🗓️ This Week</button>
+          <button class="week-toggle-btn" id="filter-btn-thismonth" onclick="filterServedData('thismonth')">📆 Current Month</button>
+          <button class="week-toggle-btn" id="filter-btn-all" onclick="filterServedData('all')">🌐 All Time</button>
+        </div>
+
+        <!-- Meal Type Filters -->
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px; align-items:center;">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); margin-right:4px;">Filter Meal:</span>
+          <button class="week-toggle-btn active" id="meal-filter-all" onclick="filterMealType('all')" style="font-size:0.75rem; padding:4px 10px;">All Meals</button>
+          <button class="week-toggle-btn" id="meal-filter-veg" onclick="filterMealType('veg')" style="font-size:0.75rem; padding:4px 10px; color:#10b981;">🥗 Pure Veg Only</button>
+          <button class="week-toggle-btn" id="meal-filter-nonveg" onclick="filterMealType('nonveg')" style="font-size:0.75rem; padding:4px 10px; color:#ef4444;">🍗 Non-Veg Only</button>
+          
+          <button class="btn" style="margin-left:auto; width:auto; font-size:0.78rem; padding:6px 14px; background:#0f766e; color:white;" onclick="exportDaywiseLedger()">
+            📥 Download Day-wise Ledger (Excel)
+          </button>
+        </div>
+
+        <!-- Served KPI Metrics -->
+        <div class="metric-grid" style="grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));">
+          <div class="metric-card" style="border-top:4px solid #10b981;">
+            <div class="metric-val" id="kpi-served-total" style="color:#10b981;">0</div>
+            <div class="metric-label">Food Served (Ate)</div>
+          </div>
+          <div class="metric-card" style="border-top:4px solid var(--primary);">
+            <div class="metric-val" id="kpi-booked-total">0</div>
+            <div class="metric-label">Total Booked</div>
+          </div>
+          <div class="metric-card" style="border-top:4px solid #10b981;">
+            <div class="metric-val" id="kpi-served-veg" style="color:#10b981;">0</div>
+            <div class="metric-label">Veg Served</div>
+          </div>
+          <div class="metric-card" style="border-top:4px solid #ef4444;">
+            <div class="metric-val" id="kpi-served-nonveg" style="color:#ef4444;">0</div>
+            <div class="metric-label">Non-Veg Served</div>
+          </div>
+          <div class="metric-card" style="border-top:4px solid #f59e0b;">
+            <div class="metric-val" id="kpi-pending-total" style="color:#f59e0b;">0</div>
+            <div class="metric-label">Not Yet Taken</div>
+          </div>
+        </div>
+
+        <!-- Served Details Log Table (Anonymized: Tokens & Meals only, No PII) -->
+        <div class="table-responsive" style="margin-bottom:20px;">
+          <table id="vendor-served-log-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Token Serial</th>
+                <th>Meal Preference</th>
+                <th>Serving Status</th>
+                <th>Served Time</th>
+              </tr>
+            </thead>
+            <tbody id="vendor-served-log-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+
+        <!-- Menu Management Section -->
+        <div class="card-title">
+          <span>📝 Update Weekly Menus</span>
+        </div>
+        <p class="card-subtitle">Edit dishes for Monday - Friday. If an item is blank, it automatically shows '—'.</p>
+
+        <div class="week-toggle">
+          <button class="week-toggle-btn active" id="btn-vendor-edit-this" onclick="switchVendorMenuWeek('this')">Edit Current Week</button>
+          <button class="week-toggle-btn" id="btn-vendor-edit-next" onclick="switchVendorMenuWeek('next')">Edit Next Week</button>
+        </div>
+
+        <div id="vendor-menu-editor-fields">
+          <!-- Dynamically populated editor fields for Mon-Fri -->
+        </div>
+
+        <button class="btn btn-primary" onclick="saveVendorMenu()" style="margin-top:12px;">
+          💾 Save & Publish Menu Changes
+        </button>
+
+        <hr style="border:none; border-top:1px solid var(--border); margin: 24px 0;">
+
+        <!-- Vendor Feedback Inbox -->
+        <div class="card-title">
+          <span>⭐ Employee Food Feedback Inbox</span>
+        </div>
+        <div id="vendor-feedback-list">
+          <!-- Dynamically populated feedback -->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOD COMMITTEE / ADMIN DASHBOARD (Protected) -->
+    <div id="view-committee" style="display:none;">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div class="card-title" style="margin-bottom:0;">
+            <span>👥 Food Committee Admin & Audit</span>
+          </div>
+          <button class="role-switch-btn" style="background:var(--primary); color:white;" onclick="switchRole('employee')">
+            ← Back to Employee
+          </button>
+        </div>
+        <p class="card-subtitle">Cafeteria oversight, billing audits, food waste prevention & reports.</p>
+
+        <!-- KPI Metrics -->
+        <div class="metric-grid" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="metric-card" style="border-top: 4px solid var(--primary);">
+            <div class="metric-val" id="admin-total-bookings">0</div>
+            <div class="metric-label">Total Bookings</div>
+          </div>
+          <div class="metric-card" style="border-top: 4px solid #f59e0b;">
+            <div class="metric-val" id="admin-avg-rating" style="color:#f59e0b;">4.8 ★</div>
+            <div class="metric-label">Avg Food Rating</div>
+          </div>
+        </div>
+
+        <!-- Live Serving Summary (Today & Current Month) for Committee -->
+        <h3 style="font-size:0.95rem; margin-bottom:10px; color:var(--primary); display:flex; justify-content:space-between; align-items:center;">
+          <span>🍽️ Today & Month Serving Overview</span>
+          <span style="font-size:0.72rem; color:#047857; background:#dcfce7; padding:2px 8px; border-radius:10px; font-weight:700;">Live Attendance</span>
+        </h3>
+        <div class="metric-grid" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); margin-bottom:16px;">
+          <div class="metric-card" style="border-top: 4px solid #10b981;">
+            <div class="metric-val" id="committee-today-served-count" style="color:#10b981;">0</div>
+            <div class="metric-label">Today Served (Ate)</div>
+            <div style="font-size:0.72rem; color:#64748b; margin-top:2px;" id="committee-today-veg-nonveg">Veg: 0 | Non-Veg: 0</div>
+          </div>
+          <div class="metric-card" style="border-top: 4px solid #30496d;">
+            <div class="metric-val" id="committee-month-served-count" style="color:#30496d;">0</div>
+            <div class="metric-label">Current Month Total Served</div>
+            <div style="font-size:0.72rem; color:#64748b; margin-top:2px;" id="committee-month-veg-nonveg">Veg: 0 | Non-Veg: 0</div>
+          </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
+          <a href="https://docs.google.com/spreadsheets/d/1GAuOvWEfylH6BulYR0rkYNdkP6LS6tz5s6TPTyp5Wr4/edit?usp=sharing" target="_blank" class="btn" style="flex:1; min-width:180px; background:#0f9d58; color:white; text-decoration:none;">
+            📊 Open Live Google Sheet
+          </a>
+          <button class="btn btn-primary" style="flex:1; min-width:180px; background:#0f766e;" onclick="exportDaywiseLedger()">
+            📥 Download Day-wise Ledger (Excel)
+          </button>
+          <button class="btn btn-outline" style="flex:1; min-width:180px;" onclick="openPosterWindow()">
+            🖨️ Print Cafeteria QR Poster
+          </button>
+        </div>
+
+        <!-- Manual Google Sheet Instant Push Button -->
+        <div style="display:flex; gap:10px; margin-bottom:14px;">
+          <button class="btn" style="background:#047857; color:white; font-size:0.85rem;" onclick="syncAllBookingsToSheet()">
+            🚀 Sync All Offline / Existing Bookings to Google Sheet Now
+          </button>
+        </div>
+
+        <!-- Google Sheet Integration Web App URL Config Box -->
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:14px; margin-bottom:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+            <strong style="color:#166534; font-size:0.88rem;">🔗 Connected Google Spreadsheet</strong>
+            <span style="font-size:0.72rem; background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:12px; font-weight:700;">Live Sync Ready</span>
+          </div>
+          <p style="font-size:0.78rem; color:#15803d; margin-bottom:8px;">
+            Target: <code>docs.google.com/.../1GAuOvWEfylH6BulYR0rkYNdkP6LS6tz5s6TPTyp5Wr4</code>
+          </p>
+          <div style="display:flex; gap:8px;">
+            <input type="text" id="gas-webhook-url" placeholder="https://script.google.com/a/macros/onixnet.com/s/.../exec" value="https://script.google.com/a/macros/onixnet.com/s/AKfycbzTtdhXXnLHZqxmKxsKq-HwIKjz-VGakpshfOnZck-GFVL8xnt2Fvwe3Mhq_c3WPXp4hw/exec" style="font-size:0.8rem; padding:8px 10px;">
+            <button class="btn btn-primary" style="width:auto; padding:0 16px; font-size:0.8rem;" onclick="saveGoogleScriptUrl()">Save URL</button>
+          </div>
+        </div>
+
+        <!-- Week-wise Aggregated Ledger Table -->
+        <div class="card-title" style="margin-top:20px;">
+          <span>📊 Week-wise Booked vs Served Ledger</span>
+        </div>
+        <p class="card-subtitle">Aggregated weekly count of meals booked, meals served, and Veg / Non-Veg breakdown.</p>
+        <div class="table-responsive" style="margin-bottom:24px;">
+          <table id="committee-week-ledger-table">
+            <thead>
+              <tr>
+                <th>Week Period</th>
+                <th>Total Booked</th>
+                <th>Total Served</th>
+                <th>Veg Served</th>
+                <th>Non-Veg Served</th>
+                <th>Unserved / Pending</th>
+                <th>Turnout %</th>
+              </tr>
+            </thead>
+            <tbody id="committee-week-ledger-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Month-wise Aggregated Ledger Table -->
+        <div class="card-title">
+          <span>📆 Month-wise Booked vs Served Ledger</span>
+        </div>
+        <p class="card-subtitle">Monthly cafeteria participation and vendor billing totals.</p>
+        <div class="table-responsive" style="margin-bottom:24px;">
+          <table id="committee-month-ledger-table">
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Total Booked</th>
+                <th>Total Served</th>
+                <th>Veg Served</th>
+                <th>Non-Veg Served</th>
+                <th>Unserved / Buffer</th>
+                <th>Turnout %</th>
+              </tr>
+            </thead>
+            <tbody id="committee-month-ledger-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Optional Collapsed Individual Employee Log -->
+        <details style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px 16px; margin-bottom:20px;">
+          <summary style="font-size:0.82rem; font-weight:700; color:#30496d; cursor:pointer;">
+            🔍 View Detailed Individual Employee Rows (On-screen Preview)
+          </summary>
+          <div class="table-responsive" style="margin-top:12px;">
+            <table id="admin-bookings-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Employee Name</th>
+                  <th>Emp ID / Email</th>
+                  <th>Meal Type</th>
+                  <th>Token Code</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="admin-bookings-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <hr style="border:none; border-top:1px solid var(--border); margin: 24px 0;">
+
+        <!-- Admin Controls -->
+        <div class="card-title">
+          <span>⚙️ System Utilities</span>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn btn-outline" style="flex:1;" onclick="seedDemoData()">
+            🌱 Populate Realistic Sample Data
+          </button>
+          <button class="btn btn-outline" style="flex:1; color:#ef4444; border-color:#fca5a5;" onclick="clearAllData()">
+            🗑️ Clear Local Bookings
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Login Modal for Vendor & Committee -->
+    <!-- Login Modal for Vendor & Committee -->
+  <div class="modal-overlay" id="login-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+      
+      <!-- Standard Password Login View -->
+      <div id="login-view-normal">
+        <h3 style="color:var(--primary); margin-bottom:6px; font-size:1.15rem;">🔐 Staff Access Portal</h3>
+        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:16px;">
+          Authorized access for Vendor Kitchen Operations & Food Committee.
+        </p>
+
+        <div class="form-group">
+          <label>Select Portal</label>
+          <select id="login-role-select">
+            <option value="vendor">Vendor Kitchen Operations</option>
+            <option value="committee">Food Committee Admin</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Access Password</label>
+          <input type="password" id="login-pwd-input" placeholder="Enter password" autocomplete="current-password">
+        </div>
+
+        <button class="btn btn-primary" onclick="handlePasswordLogin()">
+          Unlock Portal
+        </button>
+
+        <div style="margin-top:14px; text-align:center;">
+          <a href="javascript:void(0)" onclick="showOtpResetView()" style="font-size:0.75rem; color:var(--primary); font-weight:600; text-decoration:underline;">
+            Forgot Password? Reset via OTP
+          </a>
+        </div>
+      </div>
+
+      <!-- OTP Password Reset View (Restricted to nikhil.shelke@onixnet.com) -->
+      <div id="login-view-otp" style="display:none;">
+        <h3 style="color:var(--primary); margin-bottom:6px; font-size:1.15rem;">🔑 Reset Staff Password</h3>
+        <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:14px;">
+          Password reset rights are restricted to:<br>
+          <strong style="color:var(--primary); font-size:0.85rem;">nikhil.shelke@onixnet.com</strong>
+        </p>
+
+        <div id="otp-step-1">
+          <button class="btn btn-primary" onclick="sendOtpToAdminEmail()" id="btn-send-otp">
+            📩 Send OTP to nikhil.shelke@onixnet.com
+          </button>
+        </div>
+
+        <div id="otp-step-2" style="display:none; margin-top:10px;">
+          <div style="background:#ecfdf5; border:1px solid #a7f3d0; padding:10px; border-radius:8px; font-size:0.78rem; color:#065f46; margin-bottom:12px;" id="otp-status-banner">
+            OTP sent to nikhil.shelke@onixnet.com
+          </div>
+
+          <div class="form-group">
+            <label>Enter 6-Digit OTP</label>
+            <input type="text" id="otp-code-input" placeholder="e.g. 582914" maxlength="6">
+          </div>
+
+          <div class="form-group">
+            <label>Enter New Password</label>
+            <input type="password" id="new-password-input" placeholder="Enter new password">
+          </div>
+
+          <button class="btn btn-primary" onclick="verifyOtpAndSetPassword()">
+            ✅ Verify OTP & Save New Password
+          </button>
+        </div>
+
+        <div style="margin-top:14px; text-align:center;">
+          <a href="javascript:void(0)" onclick="hideOtpResetView()" style="font-size:0.75rem; color:var(--text-muted); text-decoration:underline;">
+            ← Back to Login
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Fullscreen Pass Modal -->
+  <div class="fullscreen-pass" id="fullscreen-pass-modal" onclick="closeFullscreenPass()">
+    <div style="color:white; text-align:center; max-width:350px; width:100%;">
+      <p style="font-size:0.8rem; letter-spacing:0.1em; color:#94a3b8; text-transform:uppercase;">Onix Cafeteria Pass</p>
+      <div id="fs-pass-content" style="margin-top:20px;"></div>
+      <p style="font-size:0.75rem; color:#64748b; margin-top:24px;">Tap anywhere to close</p>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast-bar">
+    <span id="toast-icon">✅</span>
+    <span id="toast-msg">Action completed!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Onix Cafeteria Lunch System</strong> &bull; Branding Theme: #30496d & #f46262</p>
+    <div class="status-pill">
+      <span class="dot"></span>
+      <span id="sync-status">Local & Server Sync Active</span>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Application Logic -->
+  <script>
+    // ==========================================
+    // INITIAL DATA & STORAGE SETUP
+    // ==========================================
+    const DEFAULT_GAS_URL = "https://script.google.com/macros/s/AKfycbzTtdhXXnLHZqxmKxsKq-HwIKjz-VGakpshfOnZck-GFVL8xnt2Fvwe3Mhq_c3WPXp4hw/exec";
+    const ONIX_DOMAIN_GAS_URL = "https://script.google.com/a/macros/onixnet.com/s/AKfycbzTtdhXXnLHZqxmKxsKq-HwIKjz-VGakpshfOnZck-GFVL8xnt2Fvwe3Mhq_c3WPXp4hw/exec";
+
+    function getActiveGasUrl() {
+      try {
+        return localStorage.getItem('onix_gas_url') || DEFAULT_GAS_URL;
+      } catch(e) {
+        return DEFAULT_GAS_URL;
+      }
+    }
+
+    const DEFAULT_WEEK_CURRENT = [
+      { day: "Monday", date: "Oct 5", dal: "Dal Tadka", sabji1: "Batata Sukhi Bhaji", sabji2: "Paneer Masala", rotiRice: "Chapati & Steam Rice", nonveg: "—", sweet: "Gulab Jamun" },
+      { day: "Tuesday", date: "Oct 6", dal: "Moong Dal", sabji1: "Bhendi Fry", sabji2: "Aloo Gobi", rotiRice: "Phulka & Jeera Rice", nonveg: "—", sweet: "Boondi Ladoo" },
+      { day: "Wednesday", date: "Oct 7", dal: "Dal Fry", sabji1: "Mix Veg Curry", sabji2: "Chole Masala", rotiRice: "Chapati & Peas Pulao", nonveg: "Egg Curry Special", sweet: "Fruit Custard" },
+      { day: "Thursday", date: "Oct 8", dal: "Panchmel Dal", sabji1: "Batata Rassa", sabji2: "Methi Malai Mutter", rotiRice: "Chapati & Steamed Rice", nonveg: "Chicken Sukka", sweet: "Kheer" },
+      { day: "Friday", date: "Oct 9", dal: "Dal Makhani", sabji1: "Baingan Bharta", sabji2: "Veg Kolhapuri", rotiRice: "Chapati & Veg Biryani", nonveg: "Egg Masala", sweet: "Jalebi" }
+    ];
+
+    const DEFAULT_WEEK_NEXT = [
+      { day: "Monday", date: "Oct 12", dal: "Toor Dal Fry", sabji1: "Aloo Mutter", sabji2: "Kadai Paneer", rotiRice: "Chapati & Jeera Rice", nonveg: "—", sweet: "Sheera" },
+      { day: "Tuesday", date: "Oct 13", dal: "Chana Dal", sabji1: "Lauki Kofta", sabji2: "Capsicum Aloo", rotiRice: "Phulka & Steamed Rice", nonveg: "—", sweet: "Rasgulla" },
+      { day: "Wednesday", date: "Oct 14", dal: "Dal Palak", sabji1: "Veg Kadai", sabji2: "Rajma Masala", rotiRice: "Chapati & Ghee Rice", nonveg: "Chicken Curry", sweet: "Moong Dal Halwa" },
+      { day: "Thursday", date: "Oct 15", dal: "Yellow Dal", sabji1: "Bhindi Masala", sabji2: "Soyabean Bhurji", rotiRice: "Chapati & Steamed Rice", nonveg: "—", sweet: "—" },
+      { day: "Friday", date: "Oct 16", dal: "Dal Makhani", sabji1: "Dum Aloo", sabji2: "Paneer Tikka Masala", rotiRice: "Chapati & Veg Pulao", nonveg: "Egg Bhurji Special", sweet: "Gulab Jamun" }
+    ];
+
+    // Initialize State
+    let appState = {
+      currentRole: 'employee',
+      currentWeekView: 'this',
+      vendorEditWeek: 'this',
+      menuCurrent: JSON.parse(localStorage.getItem('onix_menu_current')) || DEFAULT_WEEK_CURRENT,
+      menuNext: JSON.parse(localStorage.getItem('onix_menu_next')) || DEFAULT_WEEK_NEXT,
+      bookings: JSON.parse(localStorage.getItem('onix_bookings')) || [],
+      feedbacks: JSON.parse(localStorage.getItem('onix_feedbacks')) || [],
+      activeUserPass: JSON.parse(localStorage.getItem('onix_active_pass')) || null
+    };
+
+    // ==========================================
+    // DATE & CUTOFF CLOCK LOGIC (11:59 PM EOD)
+    // ==========================================
+    function updateClockAndCutoff() {
+      const now = new Date();
+      
+      // Cutoff is today at 23:59:59 (11:59 PM)
+      const cutoff = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+      const diffMs = cutoff - now;
+
+      const clockEl = document.getElementById('cutoff-clock');
+      const closedAlertEl = document.getElementById('booking-closed-alert');
+      const submitBtnEl = document.getElementById('btn-submit-booking');
+
+      if (diffMs > 0) {
+        const hours = Math.floor(diffMs / (1000 * 60 * 60));
+        const mins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diffMs % (1000 * 60)) / 1000);
+        clockEl.textContent = `${hours}h ${mins}m ${secs}s left`;
+        clockEl.style.background = 'var(--accent)';
+        if (closedAlertEl) closedAlertEl.style.display = 'none';
+        if (submitBtnEl) submitBtnEl.disabled = false;
+      } else {
+        clockEl.textContent = 'Closed (11:59 PM)';
+        clockEl.style.background = '#64748b';
+        if (closedAlertEl) closedAlertEl.style.display = 'flex';
+        if (submitBtnEl) submitBtnEl.disabled = true;
+      }
+
+      // Calculate Tomorrow's Date String
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const tomorrowDayName = days[tomorrow.getDay()];
+      const tomorrowFormatted = `${tomorrowDayName}, ${months[tomorrow.getMonth()]} ${tomorrow.getDate()}`;
+
+      const targetDateEl = document.getElementById('booking-target-date-text');
+      if (targetDateEl) {
+        targetDateEl.textContent = `Advance Booking for Tomorrow: ${tomorrowFormatted}`;
+      }
+
+      // Update Tomorrow's Menu preview
+      const previewEl = document.getElementById('tomorrow-menu-desc');
+      if (previewEl) {
+        // Match day of week in menuCurrent
+        const match = appState.menuCurrent.find(m => m.day.toLowerCase() === tomorrowDayName.toLowerCase());
+        if (match) {
+          previewEl.innerHTML = `<strong>${match.dal || '—'}</strong> &bull; ${match.sabji1 || '—'} &bull; ${match.sabji2 || '—'} &bull; ${match.rotiRice || '—'} ` +
+            (match.nonveg && match.nonveg !== '—' ? `&bull; <span style="color:var(--nonveg); font-weight:700;">[Non-Veg: ${match.nonveg}]</span>` : '');
+        } else {
+          previewEl.textContent = "Weekend / Standard buffet arrangement.";
+        }
+      }
+    }
+
+    setInterval(updateClockAndCutoff, 1000);
+    updateClockAndCutoff();
+
+    // ==========================================
+    // NAVIGATION & TAB SWITCHING
+    // ==========================================
+    function switchEmpTab(tabName) {
+      const tabs = ['booking', 'menu', 'pass', 'feedback'];
+      tabs.forEach(t => {
+        const btn = document.querySelector(`.nav-tabs button:nth-child(${tabs.indexOf(t) + 1})`);
+        const content = document.getElementById(`tab-${t}`);
+        if (btn) btn.classList.toggle('active', t === tabName);
+        if (content) content.style.display = (t === tabName) ? 'block' : 'none';
+      });
+
+      if (tabName === 'menu') renderWeeklyMenu();
+      if (tabName === 'pass') renderMealPass();
+      const savedGasUrl = getActiveGasUrl();
+      const gasInput = document.getElementById('gas-webhook-url');
+      if (gasInput && savedGasUrl) gasInput.value = savedGasUrl;
+    }
+
+    function switchRole(role) {
+      appState.currentRole = role;
+      document.getElementById('view-employee').style.display = (role === 'employee') ? 'block' : 'none';
+      document.getElementById('view-vendor').style.display = (role === 'vendor') ? 'block' : 'none';
+      document.getElementById('view-committee').style.display = (role === 'committee') ? 'block' : 'none';
+
+      const roleTextEl = document.getElementById('role-display-text');
+      if (role === 'employee') roleTextEl.textContent = 'Staff Login';
+      if (role === 'vendor') roleTextEl.textContent = 'Vendor Mode (Active)';
+      if (role === 'committee') roleTextEl.textContent = 'Admin Mode (Active)';
+
+      if (role === 'vendor') renderVendorDashboard();
+      if (role === 'committee') renderCommitteeDashboard();
+    }
+
+    // ==========================================
+    // PIN AUTHENTICATION MODAL
+    // ==========================================
+    function openLoginModal() {
+      if (appState.currentRole !== 'employee') {
+        switchRole('employee');
+        showToast("Switched back to Employee View", "ℹ️");
+        return;
+      }
+      document.getElementById('login-modal').classList.add('active');
+      document.getElementById('login-pin-input').value = '';
+      document.getElementById('login-pin-input').focus();
+    }
+
+    function closeLoginModal() {
+      document.getElementById('login-modal').classList.remove('active');
+    }
+
+        const ADMIN_EMAIL = 'nikhil.shelke@onixnet.com';
+    let generatedOtp = null;
+
+    function handlePasswordLogin() {
+      const role = document.getElementById('login-role-select').value;
+      const pwd = document.getElementById('login-pwd-input').value.trim();
+      const currentPwd = localStorage.getItem('onix_master_password') || 'Onix@Lunch1';
+
+      if (pwd === currentPwd) {
+        closeLoginModal();
+        if (role === 'vendor') {
+          switchRole('vendor');
+          showToast("Welcome to Vendor Dashboard", "👨‍🍳");
+        } else {
+          switchRole('committee');
+          showToast("Welcome Food Committee Admin", "👥");
+        }
+      } else {
+        showToast("Incorrect password! Contact nikhil.shelke@onixnet.com", "❌");
+      }
+    }
+
+    function showOtpResetView() {
+      document.getElementById('login-view-normal').style.display = 'none';
+      document.getElementById('login-view-otp').style.display = 'block';
+      document.getElementById('otp-step-1').style.display = 'block';
+      document.getElementById('otp-step-2').style.display = 'none';
+    }
+
+    function hideOtpResetView() {
+      document.getElementById('login-view-normal').style.display = 'block';
+      document.getElementById('login-view-otp').style.display = 'none';
+    }
+
+    function sendOtpToAdminEmail() {
+      generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+      document.getElementById('otp-step-1').style.display = 'none';
+      document.getElementById('otp-step-2').style.display = 'block';
+      
+      const banner = document.getElementById('otp-status-banner');
+      banner.innerHTML = `<strong>Verification OTP sent to:</strong> ${ADMIN_EMAIL}<br>
+        <div style="margin-top:6px; font-size:1.1rem; font-weight:800; color:#047857; letter-spacing:0.1em;">${generatedOtp}</div>
+        <span style="font-size:0.7rem; color:#065f46;">(Use this OTP to set your new password)</span>`;
+
+      showToast(`OTP generated for ${ADMIN_EMAIL}`, "📩");
+    }
+
+    function verifyOtpAndSetPassword() {
+      const enteredOtp = document.getElementById('otp-code-input').value.trim();
+      const newPwd = document.getElementById('new-password-input').value.trim();
+
+      if (!enteredOtp || enteredOtp !== generatedOtp) {
+        showToast("Invalid OTP code!", "❌");
+        return;
+      }
+
+      if (!newPwd || newPwd.length < 6) {
+        showToast("Password must be at least 6 characters", "⚠️");
+        return;
+      }
+
+      localStorage.setItem('onix_master_password', newPwd);
+      generatedOtp = null;
+      showToast("Password updated successfully!", "🎉");
+      hideOtpResetView();
+      document.getElementById('login-pwd-input').value = newPwd;
+    }
+
+    // ==========================================
+    // MEAL OPTION SELECTOR (Veg / Non-Veg / Optout)
+    // ==========================================
+    function selectMealOption(type) {
+      document.getElementById('selected-meal-type').value = type;
+      ['veg', 'nonveg'].forEach(t => {
+        const el = document.getElementById(`option-${t}`);
+        el.className = 'meal-radio-card';
+        if (t === type) {
+          el.classList.add(`selected-${type}`);
+        }
+      });
+    }
+
+    // ==========================================
+    // BOOKING SUBMISSION & TOKEN GENERATOR
+    // ==========================================
+    
+    // Google Apps Script Live Sync
+    function saveGoogleScriptUrl() {
+      const url = document.getElementById('gas-webhook-url').value.trim();
+      localStorage.setItem('onix_gas_url', url);
+      showToast("Google Sheet Script URL Saved!", "🔗");
+    }
+
+    function syncToGoogleSheet(payload) {
+      try {
+        const gasUrl = getActiveGasUrl();
+        if (!gasUrl) return;
+
+        const payloadStr = JSON.stringify(payload);
+
+        // 1. Send via POST with text/plain (Standard CORS bypass for Apps Script)
+        try {
+          fetch(gasUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: payloadStr
+          }).catch(function(err) {});
+        } catch(e) {}
+
+        try {
+          if (ONIX_DOMAIN_GAS_URL && gasUrl !== ONIX_DOMAIN_GAS_URL) {
+            fetch(ONIX_DOMAIN_GAS_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: payloadStr
+            }).catch(function(err) {});
+          }
+        } catch(e) {}
+
+        // 2. Background beacon for mobile reliability
+        try {
+          if (navigator.sendBeacon) {
+            const blob = new Blob([payloadStr], { type: 'text/plain;charset=utf-8' });
+            navigator.sendBeacon(gasUrl, blob);
+          }
+        } catch(e) {}
+
+        // 3. Fallback GET ping
+        try {
+          const pingUrl = gasUrl + (gasUrl.includes('?') ? '&' : '?') + 'data=' + encodeURIComponent(payloadStr);
+          const img = new Image();
+          img.src = pingUrl;
+        } catch(e) {}
+      } catch(err) {
+        console.warn("syncToGoogleSheet notice:", err);
+      }
+    }
+
+    function syncAllBookingsToSheet() {
+      if (appState.bookings.length === 0) {
+        showToast("No bookings to sync!", "⚠️");
+        return;
+      }
+      showToast(`Pushing ${appState.bookings.length} bookings to Google Sheet...`, "⏳");
+      appState.bookings.forEach((b, idx) => {
+        setTimeout(() => {
+          syncToGoogleSheet(b);
+        }, idx * 300);
+      });
+      setTimeout(() => {
+        showToast("All bookings pushed to Google Sheet! Check your sheet.", "🎉");
+      }, appState.bookings.length * 300 + 500);
+    }
+
+    // ==========================================
+    // BULK BOOKING & WORKING DAYS CALCULATOR
+    // ==========================================
+    let activeBookingPeriod = 'tomorrow';
+    let selectedWorkingDates = [];
+
+    function selectBookingPeriod(period) {
+      activeBookingPeriod = period;
+      ['tomorrow', 'thisweek', 'nextweek', 'month'].forEach(p => {
+        const el = document.getElementById(`period-${p}`);
+        if (el) el.className = (p === period) ? 'meal-radio-card selected-veg' : 'meal-radio-card';
+      });
+      calculateSelectedDates();
+    }
+
+    function calculateSelectedDates() {
+      const dates = [];
+      const now = new Date();
+      const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+      function isWorkingDay(d) {
+        return d.getDay() !== 0 && d.getDay() !== 6; // Skip Sat (6) and Sun (0)
+      }
+
+      function formatDay(d) {
+        return {
+          iso: d.toISOString().split('T')[0],
+          display: `${months[d.getMonth()]} ${d.getDate()}`,
+          fullDisplay: `${dayNames[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate()}`,
+          dayName: dayNames[d.getDay()]
+        };
+      }
+
+      if (activeBookingPeriod === 'tomorrow') {
+        const d = new Date();
+        d.setDate(d.getDate() + 1);
+        // If tomorrow is Saturday, skip to Monday
+        while (!isWorkingDay(d)) {
+          d.setDate(d.getDate() + 1);
+        }
+        dates.push(formatDay(d));
+      } else if (activeBookingPeriod === 'thisweek') {
+        // Remaining days of current week (Mon-Fri)
+        const currentDay = now.getDay();
+        for (let i = 1; i <= 5; i++) {
+          const d = new Date();
+          const diff = i - currentDay;
+          if (diff >= 0) {
+            d.setDate(now.getDate() + diff);
+            if (isWorkingDay(d)) dates.push(formatDay(d));
+          }
+        }
+      } else if (activeBookingPeriod === 'nextweek') {
+        // Next week Monday to Friday (5 full working days)
+        const d = new Date();
+        const currentDay = d.getDay();
+        const daysToNextMonday = ((8 - currentDay) % 7) || 7;
+        d.setDate(d.getDate() + daysToNextMonday);
+
+        for (let i = 0; i < 5; i++) {
+          const wd = new Date(d);
+          wd.setDate(d.getDate() + i);
+          dates.push(formatDay(wd));
+        }
+      } else if (activeBookingPeriod === 'month') {
+        // Next 30 calendar days (strictly working days only)
+        for (let i = 1; i <= 30; i++) {
+          const d = new Date();
+          d.setDate(now.getDate() + i);
+          if (isWorkingDay(d)) {
+            dates.push(formatDay(d));
+          }
+        }
+      }
+
+      selectedWorkingDates = dates;
+      const summaryText = dates.map(d => `${d.dayName.slice(0,3)} ${d.display}`).join(', ');
+      const summaryEl = document.getElementById('selected-dates-text');
+      if (summaryEl) {
+        summaryEl.innerHTML = `<strong>${dates.length} Working Days:</strong> ${summaryText}`;
+      }
+
+      const tomorrowLabel = document.getElementById('label-tomorrow-date');
+      if (tomorrowLabel && dates.length > 0 && activeBookingPeriod === 'tomorrow') {
+        tomorrowLabel.textContent = dates[0].display;
+      }
+    }
+
+    // Call on load
+    calculateSelectedDates();
+
+    // ==========================================
+    // STANDARDIZED MEAL PASS QR & DIGITAL PASS
+    // ==========================================
+    function renderMealPass() {
+      const container = document.getElementById('active-pass-container');
+      const pass = appState.activeUserPass || (appState.bookings.length > 0 ? appState.bookings[0] : null);
+
+      if (!pass) {
+        container.innerHTML = `
+          <div style="text-align:center; padding:30px; background:#f8fafc; border-radius:12px; border:1px dashed #cbd5e1;">
+            <p style="font-size:2rem; margin-bottom:8px;">🍱</p>
+            <p style="font-weight:700; color:var(--primary); margin-bottom:4px;">No Active Meal Booking</p>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:14px;">Book lunch for tomorrow or the week to get your digital pass & token.</p>
+            <button class="btn btn-primary" style="width:auto; margin:0 auto; padding:8px 18px;" onclick="switchEmpTab('booking')">
+              Book Lunch Now
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      const isVeg = pass.mealType === 'veg';
+      const badgeClass = isVeg ? 'pass-badge-veg' : 'pass-badge-nonveg';
+      const badgeText = isVeg ? '🟢 VEG MEAL' : '🔴 NON-VEG MEAL';
+      const isServed = pass.status && pass.status.includes('Served');
+
+      // Standardized high-contrast crisp QR code containing tokenCode
+      const qrToken = pass.tokenCode || 'A01';
+      const encodedPayload = encodeURIComponent(qrToken);
+      const qrImgUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodedPayload}`;
+
+      const passHtml = `
+        <div class="meal-pass-card">
+          <div class="pass-watermark">ONIX</div>
+          <div class="pass-header">
+            <div>
+              <p style="font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; color:#94a3b8;">Onix Cafeteria Pass</p>
+              <h3 style="font-size:1.15rem; font-weight:800; color:white;">${pass.dateDisplay || pass.date}</h3>
+            </div>
+            <span class="pass-type-badge ${badgeClass}">${badgeText}</span>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <p style="font-size:0.75rem; color:#94a3b8;">Employee Name & ID</p>
+            <h4 style="font-size:1.05rem; font-weight:700; color:white;">${pass.name} <span style="font-size:0.8rem; font-weight:400; color:#cbd5e1;">(${pass.empId})</span></h4>
+            ${pass.email ? `<p style="font-size:0.72rem; color:#94a3b8;">${pass.email}</p>` : ''}
+          </div>
+
+          <!-- Sequential Daily Counter Token Box -->
+          <div style="background:#0f172a; border:2px solid #334155; border-radius:12px; padding:14px; text-align:center; margin:12px 0;">
+            <p style="font-size:0.75rem; color:#94a3b8; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:2px;">Your Lunch Serial Token</p>
+            <div style="font-size:3.4rem; font-weight:900; color:#38bdf8; font-family:monospace; letter-spacing:0.06em; line-height:1.1;">${pass.tokenCode}</div>
+            <p style="font-size:0.72rem; color:#cbd5e1; margin-top:4px;">Tell vendor "<strong>${pass.tokenCode}</strong>" or scan QR below</p>
+          </div>
+
+          <!-- Standardized Scannable Meal Pass QR Code -->
+          <div style="background:white; border-radius:12px; padding:14px; text-align:center; margin:14px 0; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+            <img src="${qrImgUrl}" alt="Meal Pass QR" style="width:190px; height:190px; object-fit:contain; border-radius:6px;">
+            <p style="color:#30496d; font-size:0.75rem; font-weight:700; margin-top:6px;">Vendor Scans this QR at Serving Line</p>
+          </div>
+
+          <!-- Live Serving Status Badge -->
+          <div style="text-align:center; margin-top:10px;">
+            <span style="display:inline-block; padding:6px 16px; border-radius:20px; font-weight:800; font-size:0.82rem; background:${isServed ? '#10b981' : '#f59e0b'}; color:white;">
+              ${isServed ? `✅ FOOD SERVED (${pass.servedAt || 'Today'})` : '🟡 READY TO SCAN / COLLECT'}
+            </span>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = passHtml;
+    }
+
+    // ==========================================
+    // VENDOR QR SCANNER & LIVE FOOD SERVING
+    // ==========================================
+    function playBeepSound(type = 'success') {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        if (type === 'success') {
+          osc.frequency.setValueAtTime(800, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.15);
+          gain.gain.setValueAtTime(0.3, ctx.currentTime);
+          gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.2);
+        } else {
+          osc.frequency.setValueAtTime(300, ctx.currentTime);
+          gain.gain.setValueAtTime(0.3, ctx.currentTime);
+          gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.3);
+        }
+      } catch(e) {}
+    }
+
+    function executeVendorScan(tokenOrId) {
+      const inputEl = document.getElementById('vendor-scan-input');
+      let val = (tokenOrId || (inputEl ? inputEl.value : '')).trim();
+
+      // Handle JSON QR scan data if scanned directly
+      if (val.startsWith('{') && val.includes('token')) {
+        try {
+          const parsed = JSON.parse(val);
+          val = parsed.token || parsed.empId;
+        } catch(e) {}
+      }
+
+      if (!val) {
+        showToast("Enter token (e.g. A01, A19) or Emp ID", "⚠️");
+        return;
+      }
+
+      val = val.toUpperCase();
+      const feedbackBanner = document.getElementById('scan-feedback-banner');
+      const todayStr = new Date().toISOString().split('T')[0];
+
+      // Match in bookings: First priority is today's bookings
+      let match = appState.bookings.find(b => 
+        (b.date === todayStr || b.servedDate === todayStr) &&
+        ((b.tokenCode && b.tokenCode.toUpperCase() === val) ||
+         (b.empId && b.empId.toUpperCase() === val) ||
+         (b.email && b.email.toUpperCase() === val))
+      );
+
+      // If not found in today, check any date
+      if (!match) {
+        match = appState.bookings.find(b => 
+          (b.tokenCode && b.tokenCode.toUpperCase() === val) ||
+          (b.empId && b.empId.toUpperCase() === val) ||
+          (b.email && b.email.toUpperCase() === val)
+        );
+      }
+
+      if (feedbackBanner) feedbackBanner.style.display = 'block';
+
+      if (match) {
+        const alreadyServed = match.status && match.status.includes('Served');
+        if (alreadyServed) {
+          playBeepSound('warn');
+          if (feedbackBanner) {
+            feedbackBanner.style.background = '#fef3c7';
+            feedbackBanner.style.border = '2px solid #f59e0b';
+            feedbackBanner.style.color = '#92400e';
+            feedbackBanner.innerHTML = `⚠️ ALREADY SERVED! Token [<strong>${match.tokenCode}</strong>] was already served at ${match.servedAt || 'earlier today'}.`;
+          }
+        } else {
+          // Mark Served
+          const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+          match.status = 'Served ✅';
+          match.servedAt = timeStr;
+          match.servedDate = todayStr;
+
+          localStorage.setItem('onix_bookings', JSON.stringify(appState.bookings));
+          if (appState.activeUserPass && appState.activeUserPass.id === match.id) {
+            appState.activeUserPass = match;
+            localStorage.setItem('onix_active_pass', JSON.stringify(match));
+          }
+
+          // Sync served status to Google Sheet
+          syncToGoogleSheet({
+            action: 'serve',
+            tokenCode: match.tokenCode,
+            empId: match.empId,
+            email: match.email || '',
+            name: match.name,
+            servedAt: timeStr,
+            date: match.date
+          });
+
+          playBeepSound('success');
+          if (feedbackBanner) {
+            feedbackBanner.style.background = '#ecfdf5';
+            feedbackBanner.style.border = '2px solid #10b981';
+            feedbackBanner.style.color = '#065f46';
+            feedbackBanner.innerHTML = `🎉 FOOD SERVED! Token: <strong>[${match.tokenCode}]</strong> &bull; Meal: <span style="text-transform:uppercase; font-weight:800; color:${match.mealType === 'veg' ? '#10b981' : '#ef4444'};">${match.mealType.toUpperCase()}</span> &bull; Time: ${timeStr}`;
+          }
+
+          showToast(`Served food for Token [${match.tokenCode}] (${match.mealType.toUpperCase()})!`, "✅");
+        }
+      } else {
+        playBeepSound('warn');
+        if (feedbackBanner) {
+          feedbackBanner.style.background = '#fee2e2';
+          feedbackBanner.style.border = '2px solid #ef4444';
+          feedbackBanner.style.color = '#991b1b';
+          feedbackBanner.innerHTML = `❌ NOT FOUND! Code/Token "<strong>${val}</strong>" has no active booking. Please check register counter.`;
+        }
+      }
+
+      if (inputEl) inputEl.value = '';
+      renderVendorLiveQueue();
+      filterServedData(activeServedFilter);
+      updateVendorServedSummary();
+    }
+
+    function renderVendorLiveQueue() {
+      const container = document.getElementById('vendor-live-queue');
+      if (!container) return;
+
+      const todayStr = new Date().toISOString().split('T')[0];
+      const todayBookings = appState.bookings.filter(b => b.date === todayStr);
+
+      if (todayBookings.length === 0) {
+        container.innerHTML = '<p style="padding:16px; font-size:0.8rem; text-align:center; color:#64748b;">No bookings recorded for today yet. (Walk-in buffer available).</p>';
+        return;
+      }
+
+      let html = '<div style="display:flex; flex-direction:column;">';
+      todayBookings.forEach(b => {
+        const isServed = b.status && b.status.includes('Served');
+        const isVeg = b.mealType === 'veg';
+        const mealBadge = isVeg 
+          ? '<span style="background:#ecfdf5; color:#047857; padding:4px 10px; border-radius:10px; font-weight:700; font-size:0.75rem;">🥗 PURE VEG</span>'
+          : '<span style="background:#fef2f2; color:#b91c1c; padding:4px 10px; border-radius:10px; font-weight:700; font-size:0.75rem;">🍗 NON-VEG</span>';
+
+        html += `
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-bottom:1px solid #f1f5f9; background:${isServed ? '#f8fafc' : '#ffffff'};">
+            <div style="display:flex; align-items:center; gap:14px;">
+              <span style="font-family:monospace; font-weight:900; font-size:1.3rem; color:#30496d; background:#e2e8f0; padding:6px 14px; border-radius:8px; min-width:65px; text-align:center;">
+                ${b.tokenCode}
+              </span>
+              <div>
+                <div style="display:flex; gap:8px; align-items:center;">
+                  ${mealBadge}
+                  <span style="font-size:0.75rem; color:#64748b; font-weight:600;">Daily Token</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              ${isServed 
+                ? `<span style="font-size:0.78rem; background:#dcfce7; color:#15803d; padding:6px 14px; border-radius:12px; font-weight:700;">Served ✅ ${b.servedAt || ''}</span>`
+                : `<button class="btn btn-primary" style="width:auto; padding:8px 16px; font-size:0.8rem;" onclick="executeVendorScan('${b.tokenCode}')">Mark Served ✅</button>`
+              }
+            </div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      container.innerHTML = html;
+    }
+
+    // Camera Scanner logic with jsQR + BarcodeDetector
+    let cameraStream = null;
+    let cameraScanInterval = null;
+
+    function toggleCameraScanner() {
+      const container = document.getElementById('camera-scanner-container');
+      const video = document.getElementById('camera-video-preview');
+
+      if (cameraStream) {
+        stopCameraScanner();
+        return;
+      }
+
+      container.style.display = 'block';
+
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        alert("Camera scanner not supported in this browser. Please type the token (e.g. A01, A19) into the input box.");
+        container.style.display = 'none';
+        return;
+      }
+
+      navigator.mediaDevices.getUserMedia({
+        video: { facingMode: { ideal: "environment" }, width: { ideal: 640 }, height: { ideal: 480 } }
+      })
+      .then(stream => {
+        cameraStream = stream;
+        video.srcObject = stream;
+        video.setAttribute("playsinline", true);
+        video.play();
+        showToast("Camera active. Point at Meal Pass QR.", "📷");
+        startQrDecodeLoop(video);
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Camera permission denied or camera not found. You can easily type the Token (e.g. A01, A19) into the input box!");
+        container.style.display = 'none';
+      });
+    }
+
+    function stopCameraScanner() {
+      if (cameraScanInterval) {
+        clearInterval(cameraScanInterval);
+        cameraScanInterval = null;
+      }
+      if (cameraStream) {
+        cameraStream.getTracks().forEach(t => t.stop());
+        cameraStream = null;
+      }
+      const container = document.getElementById('camera-scanner-container');
+      if (container) container.style.display = 'none';
+    }
+
+    function startQrDecodeLoop(video) {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      let hasNative = ('BarcodeDetector' in window);
+      let nativeDetector = null;
+      if (hasNative) {
+        try {
+          nativeDetector = new BarcodeDetector({ formats: ['qr_code'] });
+        } catch(e) {
+          nativeDetector = null;
+        }
+      }
+
+      cameraScanInterval = setInterval(async () => {
+        if (!cameraStream || video.readyState < 2) return;
+
+        // 1. Try Native BarcodeDetector
+        if (nativeDetector) {
+          try {
+            const detected = await nativeDetector.detect(video);
+            if (detected && detected.length > 0 && detected[0].rawValue) {
+              const scannedVal = detected[0].rawValue;
+              stopCameraScanner();
+              executeVendorScan(scannedVal);
+              return;
+            }
+          } catch(e) {}
+        }
+
+        // 2. Try jsQR canvas detection
+        if (window.jsQR) {
+          try {
+            const w = video.videoWidth || 320;
+            const h = video.videoHeight || 240;
+            if (w > 0 && h > 0) {
+              canvas.width = w;
+              canvas.height = h;
+              ctx.drawImage(video, 0, 0, w, h);
+              const imgData = ctx.getImageData(0, 0, w, h);
+              const code = jsQR(imgData.data, imgData.width, imgData.height, {
+                inversionAttempts: "dontInvert"
+              });
+              if (code && code.data) {
+                stopCameraScanner();
+                executeVendorScan(code.data);
+                return;
+              }
+            }
+          } catch(e) {}
+        }
+      }, 300);
+    }
+
+    // ==========================================
+    // SERVED ANALYTICS & FILTERING (DAILY, WEEKLY, MONTHLY)
+    // ==========================================
+    let activeServedFilter = 'today';
+    let activeMealFilter = 'all';
+
+    function filterMealType(type) {
+      activeMealFilter = type;
+      ['all', 'veg', 'nonveg'].forEach(t => {
+        const btn = document.getElementById(`meal-filter-${t}`);
+        if (btn) btn.classList.toggle('active', t === type);
+      });
+      filterServedData(activeServedFilter);
+    }
+
+    function filterServedData(period) {
+      activeServedFilter = period;
+      ['today', 'thisweek', 'thismonth', 'all'].forEach(p => {
+        const btn = document.getElementById(`filter-btn-${p}`);
+        if (btn) btn.classList.toggle('active', p === period);
+      });
+
+      const todayStr = new Date().toISOString().split('T')[0];
+      const now = new Date();
+
+      const filtered = appState.bookings.filter(b => {
+        let timeMatch = true;
+        if (period === 'today') {
+          timeMatch = (b.servedDate === todayStr || b.date === todayStr);
+        } else if (period === 'thisweek') {
+          const bDate = new Date(b.date || b.servedDate);
+          const diffDays = Math.abs((now - bDate) / (1000 * 60 * 60 * 24));
+          timeMatch = diffDays <= 7;
+        } else if (period === 'thismonth') {
+          const bDate = new Date(b.date || b.servedDate);
+          timeMatch = (bDate.getMonth() === now.getMonth() && bDate.getFullYear() === now.getFullYear());
+        }
+
+        if (!timeMatch) return false;
+
+        if (activeMealFilter !== 'all' && b.mealType !== activeMealFilter) {
+          return false;
+        }
+
+        return true;
+      });
+
+      let servedCount = 0;
+      let vegServed = 0;
+      let nonvegServed = 0;
+
+      filtered.forEach(b => {
+        if (b.status && b.status.includes('Served')) {
+          servedCount++;
+          if (b.mealType === 'veg') vegServed++;
+          else nonvegServed++;
+        }
+      });
+
+      const totalBooked = filtered.length;
+      const pendingCount = Math.max(0, totalBooked - servedCount);
+
+      const setEl = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      setEl('kpi-served-total', servedCount);
+      setEl('kpi-booked-total', totalBooked);
+      setEl('kpi-served-veg', vegServed);
+      setEl('kpi-served-nonveg', nonvegServed);
+      setEl('kpi-pending-total', pendingCount);
+
+      // Render table (Anonymized for Vendor: Token & Meal only)
+      const tbody = document.getElementById('vendor-served-log-tbody');
+      if (tbody) {
+        if (filtered.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color:#64748b; padding:16px;">No meal records found for this period.</td></tr>';
+        } else {
+          let rows = '';
+          filtered.forEach(b => {
+            const isServed = b.status && b.status.includes('Served');
+            rows += `
+              <tr>
+                <td>${b.dateDisplay || b.date}</td>
+                <td><strong style="color:var(--primary); font-family:monospace; font-size:1.15rem; background:#f1f5f9; padding:4px 10px; border-radius:6px;">${b.tokenCode}</strong></td>
+                <td><span style="color:${b.mealType === 'veg' ? 'var(--veg)' : 'var(--nonveg)'}; font-weight:700;">${b.mealType === 'veg' ? '🥗 PURE VEG' : '🍗 NON-VEG'}</span></td>
+                <td>
+                  <span style="font-size:0.75rem; padding:3px 10px; border-radius:12px; font-weight:700; background:${isServed ? '#dcfce7' : '#fef3c7'}; color:${isServed ? '#15803d' : '#92400e'};">
+                    ${isServed ? 'Served ✅' : 'Pending'}
+                  </span>
+                </td>
+                <td>${b.servedAt || '—'}</td>
+              </tr>
+            `;
+          });
+          tbody.innerHTML = rows;
+        }
+      }
+
+      updateVendorServedSummary();
+    }
+
+    function updateVendorServedSummary() {
+      const todayStr = new Date().toISOString().split('T')[0];
+      const now = new Date();
+      const currentMonth = now.getMonth();
+      const currentYear = now.getFullYear();
+
+      let todayServed = 0;
+      let todayVeg = 0;
+      let todayNonveg = 0;
+      let todayBooked = 0;
+
+      let monthServed = 0;
+      let monthVeg = 0;
+      let monthNonveg = 0;
+
+      appState.bookings.forEach(b => {
+        const isServed = b.status && b.status.includes('Served');
+        const isToday = (b.date === todayStr || b.servedDate === todayStr);
+
+        if (isToday) {
+          todayBooked++;
+          if (isServed) {
+            todayServed++;
+            if (b.mealType === 'veg') todayVeg++;
+            else todayNonveg++;
+          }
+        }
+
+        const bDate = new Date(b.servedDate || b.date);
+        if (isServed && bDate.getMonth() === currentMonth && bDate.getFullYear() === currentYear) {
+          monthServed++;
+          if (b.mealType === 'veg') monthVeg++;
+          else monthNonveg++;
+        }
+      });
+
+      const todayPending = Math.max(0, todayBooked - todayServed);
+
+      const setEl = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      setEl('vendor-today-served-count', todayServed);
+      setEl('vendor-today-veg-nonveg', `Veg: ${todayVeg} | Non-Veg: ${todayNonveg}`);
+      setEl('vendor-today-pending-count', todayPending);
+      setEl('vendor-month-served-count', monthServed);
+      setEl('vendor-month-veg-nonveg', `Veg: ${monthVeg} | Non-Veg: ${monthNonveg}`);
+
+      setEl('committee-today-served-count', todayServed);
+      setEl('committee-today-veg-nonveg', `Veg: ${todayVeg} | Non-Veg: ${todayNonveg}`);
+      setEl('committee-month-served-count', monthServed);
+      setEl('committee-month-veg-nonveg', `Veg: ${monthVeg} | Non-Veg: ${monthNonveg}`);
+    }
+
+    // ==========================================
+    // ONIX GOOGLE ACCOUNT SSO & VERIFICATION LOGIC
+    // ==========================================
+    function isAllowedOnixEmail(email) {
+      if (!email) return false;
+      const lower = email.trim().toLowerCase();
+      return lower.endsWith('@onixnet.com') || lower.endsWith('@onix.com');
+    }
+
+    function openOnixAuthModal() {}
+    function closeOnixAuthModal() {}
+    function resetAuthModalToInput() {}
+    function promptSwitchOnixAccount() {}
+
+    function initDeviceProfile() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlEmail = urlParams.get('email');
+      const urlId = urlParams.get('id') || urlParams.get('empid');
+      const urlName = urlParams.get('name');
+
+      if (urlEmail && isAllowedOnixEmail(urlEmail)) {
+        const cleanEmail = urlEmail.trim().toLowerCase();
+        const derivedName = urlName || cleanEmail.split('@')[0].replace('.', ' ').replace(/(^|\s)\S/g, l => l.toUpperCase());
+        const derivedEmpId = urlId || cleanEmail.split('@')[0];
+        localStorage.setItem('onix_auth_email', cleanEmail);
+        localStorage.setItem('onix_auth_name', derivedName);
+        localStorage.setItem('onix_auth_empid', derivedEmpId);
+      }
+    }
+
+    // Sequential Daily Token & Booking Submission
+    function handleBookingSubmit(e) {
+      if (e && e.preventDefault) e.preventDefault();
+
+      const mealTypeEl = document.getElementById('selected-meal-type');
+      const submitBtn = document.getElementById('btn-submit-booking');
+      const mealType = mealTypeEl ? mealTypeEl.value : 'veg';
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlEmail = urlParams.get('email') || '';
+      const urlId = urlParams.get('id') || urlParams.get('empid') || '';
+      const urlName = urlParams.get('name') || '';
+
+      let email = urlEmail || localStorage.getItem('onix_auth_email') || localStorage.getItem('onix_saved_email') || '';
+      if (!email || !email.includes('@')) {
+        email = 'onix.staff@onixnet.com';
+      } else {
+        email = email.trim().toLowerCase();
+        try { localStorage.setItem('onix_auth_email', email); } catch(err) {}
+      }
+
+      let empId = urlId || localStorage.getItem('onix_auth_empid') || localStorage.getItem('onix_saved_empid') || '';
+      if (!empId) {
+        empId = email.split('@')[0].toUpperCase();
+      }
+
+      let name = urlName || localStorage.getItem('onix_auth_name') || localStorage.getItem('onix_saved_name') || '';
+      if (!name) {
+        name = email.split('@')[0].replace('.', ' ').replace(/(^|\s)\S/g, l => l.toUpperCase());
+      }
+
+      if (!selectedWorkingDates || selectedWorkingDates.length === 0) {
+        calculateSelectedDates();
+      }
+      if (!selectedWorkingDates || selectedWorkingDates.length === 0) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        while (tomorrow.getDay() === 0 || tomorrow.getDay() === 6) {
+          tomorrow.setDate(tomorrow.getDate() + 1);
+        }
+        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        selectedWorkingDates = [{
+          iso: tomorrow.toISOString().split('T')[0],
+          display: `${months[tomorrow.getMonth()]} ${tomorrow.getDate()}`,
+          fullDisplay: `${dayNames[tomorrow.getDay()]}, ${months[tomorrow.getMonth()]} ${tomorrow.getDate()}`,
+          dayName: dayNames[tomorrow.getDay()]
+        }];
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>⏳ Booking Confirmed...</span>';
+      }
+
+      const generatedBookings = [];
+
+      selectedWorkingDates.forEach((dateObj, idx) => {
+        // Daily Sequential Token calculation: A01, A02, A19, A37...
+        const existingForDate = appState.bookings.filter(b => b.date === dateObj.iso);
+        const serialNum = existingForDate.length + 1;
+        const numStr = serialNum < 10 ? '0' + serialNum : '' + serialNum;
+        const tokenCode = `A${numStr}`;
+
+        const booking = {
+          id: 'BK-' + (Date.now() + idx),
+          date: dateObj.iso,
+          dateDisplay: dateObj.fullDisplay,
+          name: name,
+          empId: empId,
+          email: email,
+          mealType: mealType,
+          tokenCode: tokenCode,
+          status: 'Confirmed',
+          servedAt: '',
+          servedDate: '',
+          timestamp: new Date().toLocaleTimeString()
+        };
+
+        generatedBookings.push(booking);
+        appState.bookings.unshift(booking);
+
+        try {
+          syncToGoogleSheet(booking);
+        } catch(err) {
+          console.warn("Sync error:", err);
+        }
+      });
+
+      try {
+        localStorage.setItem('onix_bookings', JSON.stringify(appState.bookings));
+        appState.activeUserPass = generatedBookings[0];
+        localStorage.setItem('onix_active_pass', JSON.stringify(generatedBookings[0]));
+      } catch(e) {
+        console.warn("LocalStorage save error:", e);
+      }
+
+      showToast(`🎉 Booked ${generatedBookings.length} Day(s)! Token: ${generatedBookings[0].tokenCode}`, "🎉");
+
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>✅ Confirm Tomorrow\'s Booking</span>';
+        }
+        switchEmpTab('pass');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 400);
+    }
+
+    function openFullscreenPass() {
+      const pass = appState.activeUserPass || (appState.bookings.length > 0 ? appState.bookings[0] : null);
+      if (!pass) {
+        showToast("No active pass to display", "⚠️");
+        return;
+      }
+      const fsContent = document.getElementById('fs-pass-content');
+      const isVeg = pass.mealType === 'veg';
+      const badgeColor = isVeg ? 'var(--veg)' : 'var(--accent)';
+      const badgeText = isVeg ? 'VEGETARIAN MEAL' : 'NON-VEGETARIAN MEAL';
+
+      const encodedPayload = encodeURIComponent(pass.tokenCode || 'A01');
+      const qrImgUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodedPayload}`;
+
+      fsContent.innerHTML = `
+        <div style="background:#1e293b; border: 2px solid ${badgeColor}; border-radius:16px; padding:24px; box-shadow: 0 0 30px rgba(0,0,0,0.5); text-align:center;">
+          <span style="background:${badgeColor}; color:white; padding:4px 12px; border-radius:12px; font-size:0.75rem; font-weight:800; text-transform:uppercase;">${badgeText}</span>
+          <h2 style="font-size:1.3rem; margin-top:14px; font-weight:800; color:white;">${pass.name}</h2>
+          <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:14px;">${pass.empId} &bull; ${pass.dateDisplay || pass.date}</p>
+          
+          <!-- Large Token Code -->
+          <div style="background:#0f172a; padding:12px; border-radius:12px; border:1px solid #334155; margin-bottom:14px;">
+            <p style="font-size:0.7rem; color:#94a3b8; letter-spacing:0.1em; text-transform:uppercase;">Counter Token</p>
+            <div style="font-size:3.5rem; font-weight:900; color:#38bdf8; font-family:monospace; letter-spacing:0.08em;">${pass.tokenCode}</div>
+          </div>
+
+          <div style="background:white; border-radius:12px; padding:12px; display:inline-block; margin-bottom:14px;">
+            <img src="${qrImgUrl}" alt="Meal QR" style="width:200px; height:200px; object-fit:contain;">
+            <p style="color:#30496d; font-size:0.72rem; font-weight:700; margin-top:4px;">Vendor Scans this QR</p>
+          </div>
+
+          <p style="font-size:0.75rem; color:#10b981;">✅ Verified Employee Pass</p>
+        </div>
+      `;
+      document.getElementById('fullscreen-pass-modal').classList.add('active');
+    }
+
+    function closeFullscreenPass() {
+      document.getElementById('fullscreen-pass-modal').classList.remove('active');
+    }
+
+    // Export Day-wise Booking & Served Ledger (Excel Ready CSV with BOM)
+    function exportDaywiseLedger() {
+      if (!appState.bookings || appState.bookings.length === 0) {
+        showToast("No bookings to export!", "⚠️");
+        return;
+      }
+
+      const sorted = [...appState.bookings].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+      let csvContent = "\uFEFF"; // UTF-8 BOM for Microsoft Excel
+      csvContent += "Booking Date,Day,Token Serial,Employee ID,Onix Email,Employee Name,Meal Preference,Served Status,Served Time,Booking Timestamp\n";
+
+      sorted.forEach(b => {
+        const d = b.date ? new Date(b.date) : new Date();
+        const dayName = b.dateDisplay ? b.dateDisplay.split(',')[0] : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][d.getDay()];
+        const isServed = b.status && b.status.includes('Served');
+        const servedText = isServed ? "SERVED" : "Not Served";
+        const servedTime = b.servedAt || "";
+        const email = b.email || (b.empId && b.empId.includes('@') ? b.empId : `${(b.empId || '').toLowerCase()}@onix.com`);
+
+        csvContent += `"${b.date || ''}","${dayName}","${b.tokenCode || ''}","${b.empId || ''}","${email}","${b.name || ''}","${(b.mealType || '').toUpperCase()}","${servedText}","${servedTime}","${b.timestamp || ''}"\n`;
+      });
+
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      const todayStr = new Date().toISOString().split('T')[0];
+      link.setAttribute("download", `Onix_Lunch_Daywise_Ledger_${todayStr}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      showToast("Day-wise Ledger downloaded successfully! (Excel Ready)", "📥");
+    }
+
+    // ==========================================
+    // WEEKLY MENU RENDERING (With '—' for blanks)
+    // ==========================================
+    function toggleWeekView(week) {
+      appState.currentWeekView = week;
+      document.getElementById('btn-this-week').classList.toggle('active', week === 'this');
+      document.getElementById('btn-next-week').classList.toggle('active', week === 'next');
+      renderWeeklyMenu();
+    }
+
+    function renderWeeklyMenu() {
+      const container = document.getElementById('menu-cards-container');
+      const menuData = (appState.currentWeekView === 'this') ? appState.menuCurrent : appState.menuNext;
+
+      const now = new Date();
+      const currentDayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][now.getDay()];
+
+      let html = '';
+      menuData.forEach(item => {
+        const isToday = (appState.currentWeekView === 'this' && item.day.toLowerCase() === currentDayName.toLowerCase());
+        
+        // Formatter function: if empty or missing, display '—'
+        const val = (txt) => (txt && txt.trim() !== '') ? txt : '<span class="empty">—</span>';
+
+        html += `
+          <div class="menu-day-card ${isToday ? 'today-highlight' : ''}">
+            <div class="menu-day-header">
+              <div class="menu-day-title">
+                <span>🍽️ ${item.day}</span>
+                <span style="font-size:0.8rem; font-weight:400; color:var(--text-muted);">(${item.date || '—'})</span>
+              </div>
+              ${isToday ? '<span class="day-badge badge-today">Today</span>' : ''}
+            </div>
+
+            <div class="menu-grid">
+              <div class="menu-item-row">
+                <span class="menu-item-label">Main Dal / Curry</span>
+                <span class="menu-item-value">${val(item.dal)}</span>
+              </div>
+              <div class="menu-item-row">
+                <span class="menu-item-label">Sabji 1</span>
+                <span class="menu-item-value">${val(item.sabji1)}</span>
+              </div>
+              <div class="menu-item-row">
+                <span class="menu-item-label">Sabji 2 / Special</span>
+                <span class="menu-item-value">${val(item.sabji2)}</span>
+              </div>
+              <div class="menu-item-row">
+                <span class="menu-item-label">Bread & Rice</span>
+                <span class="menu-item-value">${val(item.rotiRice)}</span>
+              </div>
+              <div class="menu-item-row" style="background:${item.nonveg && item.nonveg !== '—' ? 'var(--nonveg-light)' : '#f8fafc'};">
+                <span class="menu-item-label" style="color:var(--nonveg);">Non-Veg Option</span>
+                <span class="menu-item-value" style="color:var(--nonveg); font-weight:700;">${val(item.nonveg)}</span>
+              </div>
+              <div class="menu-item-row">
+                <span class="menu-item-label">Sweet / Accompaniment</span>
+                <span class="menu-item-value">${val(item.sweet)}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    // ==========================================
+    // FEEDBACK SYSTEM
+    // ==========================================
+    function setStarRating(num) {
+      document.getElementById('feedback-stars-val').value = num;
+      const stars = document.querySelectorAll('#rating-stars .star');
+      stars.forEach((s, idx) => {
+        s.classList.toggle('filled', idx < num);
+      });
+    }
+
+    function toggleTag(el) {
+      el.classList.toggle('selected');
+    }
+
+    function handleFeedbackSubmit(e) {
+      e.preventDefault();
+      const stars = parseInt(document.getElementById('feedback-stars-val').value) || 5;
+      const comment = document.getElementById('feedback-dish-comment').value.trim();
+      const name = document.getElementById('feedback-name').value.trim() || 'Anonymous Colleague';
+      
+      const selectedTags = [];
+      document.querySelectorAll('.feedback-tag.selected').forEach(tag => selectedTags.push(tag.textContent.trim()));
+
+      const feedback = {
+        id: 'FB-' + Date.now(),
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        time: new Date().toLocaleTimeString(),
+        stars: stars,
+        tags: selectedTags,
+        comment: comment || 'Tasty meal, thanks!',
+        name: name
+      };
+
+      appState.feedbacks.unshift(feedback);
+      localStorage.setItem('onix_feedbacks', JSON.stringify(appState.feedbacks));
+
+      trySyncServer('/api/feedback', feedback);
+      syncToGoogleSheet(feedback);
+
+      showToast("Thank you! Feedback recorded for Vendor & Committee", "⭐");
+      document.getElementById('feedback-dish-comment').value = '';
+    }
+
+    // ==========================================
+    // VENDOR DASHBOARD LOGIC
+    // ==========================================
+    function renderVendorDashboard() {
+      // Calculate Tomorrow's Headcounts
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const tomorrowStr = tomorrow.toISOString().split('T')[0];
+
+      let vegCount = 0;
+      let nonvegCount = 0;
+      let optoutCount = 0;
+
+      appState.bookings.forEach(b => {
+        if (b.mealType === 'veg') vegCount++;
+        else if (b.mealType === 'nonveg') nonvegCount++;
+        else if (b.mealType === 'optout') optoutCount++;
+      });
+
+      const totalMeals = vegCount + nonvegCount;
+      const bufferMeals = Math.ceil(totalMeals * 0.1); // 10% buffer
+
+      document.getElementById('vendor-headcount-total').textContent = totalMeals;
+      document.getElementById('vendor-headcount-veg').textContent = vegCount;
+      document.getElementById('vendor-headcount-nonveg').textContent = nonvegCount;
+      document.getElementById('vendor-headcount-buffer').textContent = `+${bufferMeals} buffer`;
+
+      renderVendorMenuEditor();
+      renderVendorFeedbackList();
+      renderVendorLiveQueue();
+      filterServedData('today');
+    }
+
+    function switchVendorMenuWeek(week) {
+      appState.vendorEditWeek = week;
+      document.getElementById('btn-vendor-edit-this').classList.toggle('active', week === 'this');
+      document.getElementById('btn-vendor-edit-next').classList.toggle('active', week === 'next');
+      renderVendorMenuEditor();
+    }
+
+    function renderVendorMenuEditor() {
+      const container = document.getElementById('vendor-menu-editor-fields');
+      const menuData = (appState.vendorEditWeek === 'this') ? appState.menuCurrent : appState.menuNext;
+
+      let html = '';
+      menuData.forEach((item, idx) => {
+        html += `
+          <div style="background:#f8fafc; border:1px solid var(--border); border-radius:8px; padding:12px; margin-bottom:12px;">
+            <h4 style="font-size:0.9rem; font-weight:700; color:var(--primary); margin-bottom:8px;">${item.day} (${item.date || '—'})</h4>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:8px;">
+              <div>
+                <label style="font-size:0.7rem;">Dal / Curry</label>
+                <input type="text" id="v-dal-${idx}" value="${item.dal || ''}" placeholder="e.g. Dal Tadka">
+              </div>
+              <div>
+                <label style="font-size:0.7rem;">Sabji 1</label>
+                <input type="text" id="v-sabji1-${idx}" value="${item.sabji1 || ''}" placeholder="e.g. Batata Bhaji">
+              </div>
+              <div>
+                <label style="font-size:0.7rem;">Sabji 2</label>
+                <input type="text" id="v-sabji2-${idx}" value="${item.sabji2 || ''}" placeholder="e.g. Paneer Masala">
+              </div>
+              <div>
+                <label style="font-size:0.7rem;">Bread & Rice</label>
+                <input type="text" id="v-rotirice-${idx}" value="${item.rotiRice || ''}" placeholder="e.g. Chapati & Rice">
+              </div>
+              <div>
+                <label style="font-size:0.7rem; color:var(--nonveg);">Non-Veg Dish</label>
+                <input type="text" id="v-nonveg-${idx}" value="${item.nonveg || ''}" placeholder="e.g. Chicken Sukka or leave blank">
+              </div>
+              <div>
+                <label style="font-size:0.7rem;">Sweet / Special</label>
+                <input type="text" id="v-sweet-${idx}" value="${item.sweet || ''}" placeholder="e.g. Gulab Jamun">
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function saveVendorMenu() {
+      const isThis = (appState.vendorEditWeek === 'this');
+      const targetMenu = isThis ? appState.menuCurrent : appState.menuNext;
+
+      targetMenu.forEach((item, idx) => {
+        item.dal = document.getElementById(`v-dal-${idx}`).value.trim() || '—';
+        item.sabji1 = document.getElementById(`v-sabji1-${idx}`).value.trim() || '—';
+        item.sabji2 = document.getElementById(`v-sabji2-${idx}`).value.trim() || '—';
+        item.rotiRice = document.getElementById(`v-rotirice-${idx}`).value.trim() || '—';
+        item.nonveg = document.getElementById(`v-nonveg-${idx}`).value.trim() || '—';
+        item.sweet = document.getElementById(`v-sweet-${idx}`).value.trim() || '—';
+      });
+
+      if (isThis) {
+        localStorage.setItem('onix_menu_current', JSON.stringify(appState.menuCurrent));
+        trySyncServer('/api/menu', { week: 'this', data: appState.menuCurrent });
+      } else {
+        localStorage.setItem('onix_menu_next', JSON.stringify(appState.menuNext));
+        trySyncServer('/api/menu', { week: 'next', data: appState.menuNext });
+      }
+
+      showToast("Menu successfully updated & published!", "✅");
+      updateClockAndCutoff();
+    }
+
+    function verifyTokenAction() {
+      const tokenInput = document.getElementById('verify-token-input').value.trim().toUpperCase();
+      const resultBox = document.getElementById('verify-result-box');
+
+      if (!tokenInput) {
+        showToast("Enter a token code to verify", "⚠️");
+        return;
+      }
+
+      // Find token in bookings
+      const match = appState.bookings.find(b => b.tokenCode.toUpperCase().includes(tokenInput) || b.empId.toUpperCase() === tokenInput);
+
+      resultBox.style.display = 'block';
+      if (match) {
+        resultBox.style.background = '#ecfdf5';
+        resultBox.style.border = '1px solid #a7f3d0';
+        resultBox.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <strong style="color:#065f46; font-size:1rem;">✅ VALID TOKEN: ${match.tokenCode}</strong><br>
+              <span style="font-size:0.85rem; color:#047857;">Employee: <strong>${match.name}</strong> (${match.empId})</span><br>
+              <span style="font-size:0.85rem; color:#047857;">Meal Type: <strong>${match.mealType.toUpperCase()}</strong></span>
+            </div>
+            <button class="btn btn-primary" style="width:auto; padding:8px 16px; font-size:0.8rem;" onclick="markServed('${match.id}')">
+              Mark Served
+            </button>
+          </div>
+        `;
+      } else {
+        resultBox.style.background = '#fee2e2';
+        resultBox.style.border = '1px solid #fca5a5';
+        resultBox.innerHTML = `
+          <strong style="color:#991b1b;">❌ TOKEN NOT FOUND</strong><br>
+          <span style="font-size:0.85rem; color:#b91c1c;">No advance booking registered with code "${tokenInput}". Please refer employee to physical register for walk-in.</span>
+        `;
+      }
+    }
+
+    function markServed(bookingId) {
+      const match = appState.bookings.find(b => b.id === bookingId);
+      if (match) {
+        match.status = 'Served ✅';
+        localStorage.setItem('onix_bookings', JSON.stringify(appState.bookings));
+        showToast(`Marked ${match.name} as Served!`, "🎉");
+        verifyTokenAction();
+      }
+    }
+
+    function renderVendorFeedbackList() {
+      const container = document.getElementById('vendor-feedback-list');
+      if (appState.feedbacks.length === 0) {
+        container.innerHTML = '<p style="color:var(--text-muted); font-size:0.85rem;">No employee feedback submitted yet.</p>';
+        return;
+      }
+
+      let html = '';
+      appState.feedbacks.slice(0, 10).forEach(fb => {
+        html += `
+          <div style="background:#f8fafc; border:1px solid var(--border); border-radius:8px; padding:12px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+              <strong style="font-size:0.85rem; color:var(--primary);">${fb.name}</strong>
+              <span style="color:#f59e0b; font-size:0.85rem;">${'★'.repeat(fb.stars)}</span>
+            </div>
+            <p style="font-size:0.82rem; color:var(--text);">${fb.comment}</p>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:6px;">
+              ${fb.tags.map(t => `<span style="font-size:0.7rem; background:#e2e8f0; padding:2px 8px; border-radius:10px;">${t}</span>`).join('')}
+            </div>
+            <p style="font-size:0.7rem; color:var(--text-muted); margin-top:4px;">${fb.date} at ${fb.time}</p>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    // ==========================================
+    // FOOD COMMITTEE DASHBOARD LOGIC (AGGREGATED LEDGERS)
+    // ==========================================
+    function getWeekKeyAndLabel(dateStr) {
+      const d = new Date(dateStr);
+      if (isNaN(d.getTime())) return { key: 'unknown', label: 'Other' };
+      const day = d.getDay();
+      const diffMon = d.getDate() - day + (day === 0 ? -6 : 1);
+      const mon = new Date(d);
+      mon.setDate(diffMon);
+      const fri = new Date(mon);
+      fri.setDate(mon.getDate() + 4);
+      const mOpts = { month: 'short', day: 'numeric' };
+      return {
+        key: mon.toISOString().split('T')[0],
+        label: `${mon.toLocaleDateString('en-US', mOpts)} – ${fri.toLocaleDateString('en-US', mOpts)}, ${fri.getFullYear()}`
+      };
+    }
+
+    function renderCommitteeWeekLedger(bookings) {
+      const tbody = document.getElementById('committee-week-ledger-tbody');
+      if (!tbody) return;
+
+      if (!bookings || bookings.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:var(--text-muted); padding:16px;">No bookings recorded yet.</td></tr>';
+        return;
+      }
+
+      const weekMap = {};
+      bookings.forEach(b => {
+        const info = getWeekKeyAndLabel(b.date || b.servedDate);
+        if (!weekMap[info.key]) {
+          weekMap[info.key] = { label: info.label, booked: 0, served: 0, vegServed: 0, nonvegServed: 0 };
+        }
+        weekMap[info.key].booked++;
+        if (b.status && b.status.includes('Served')) {
+          weekMap[info.key].served++;
+          if (b.mealType === 'veg') weekMap[info.key].vegServed++;
+          else weekMap[info.key].nonvegServed++;
+        }
+      });
+
+      const sortedKeys = Object.keys(weekMap).sort((a, b) => b.localeCompare(a));
+      let html = '';
+      sortedKeys.forEach(k => {
+        const w = weekMap[k];
+        const pending = Math.max(0, w.booked - w.served);
+        const turnout = w.booked > 0 ? Math.round((w.served / w.booked) * 100) : 0;
+        html += `
+          <tr>
+            <td><strong>🗓️ ${w.label}</strong></td>
+            <td><span style="font-weight:700; color:#30496d;">${w.booked}</span></td>
+            <td><span style="font-weight:800; color:#15803d; background:#dcfce7; padding:2px 8px; border-radius:10px;">${w.served}</span></td>
+            <td><span style="color:var(--veg); font-weight:700;">🥗 ${w.vegServed}</span></td>
+            <td><span style="color:var(--nonveg); font-weight:700;">🍗 ${w.nonvegServed}</span></td>
+            <td><span style="color:#d97706; font-weight:600;">${pending}</span></td>
+            <td><span style="font-weight:800; color:${turnout >= 80 ? '#15803d' : '#b45309'};">${turnout}%</span></td>
+          </tr>
+        `;
+      });
+      tbody.innerHTML = html;
+    }
+
+    function renderCommitteeMonthLedger(bookings) {
+      const tbody = document.getElementById('committee-month-ledger-tbody');
+      if (!tbody) return;
+
+      if (!bookings || bookings.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:var(--text-muted); padding:16px;">No bookings recorded yet.</td></tr>';
+        return;
+      }
+
+      const monthMap = {};
+      bookings.forEach(b => {
+        const d = new Date(b.date || b.servedDate);
+        const key = isNaN(d.getTime()) ? 'unknown' : `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+        const label = isNaN(d.getTime()) ? 'Other' : d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+        if (!monthMap[key]) {
+          monthMap[key] = { label: label, booked: 0, served: 0, vegServed: 0, nonvegServed: 0 };
+        }
+        monthMap[key].booked++;
+        if (b.status && b.status.includes('Served')) {
+          monthMap[key].served++;
+          if (b.mealType === 'veg') monthMap[key].vegServed++;
+          else monthMap[key].nonvegServed++;
+        }
+      });
+
+      const sortedKeys = Object.keys(monthMap).sort((a, b) => b.localeCompare(a));
+      let html = '';
+      sortedKeys.forEach(k => {
+        const m = monthMap[k];
+        const pending = Math.max(0, m.booked - m.served);
+        const turnout = m.booked > 0 ? Math.round((m.served / m.booked) * 100) : 0;
+        html += `
+          <tr>
+            <td><strong>📆 ${m.label}</strong></td>
+            <td><span style="font-weight:700; color:#30496d;">${m.booked}</span></td>
+            <td><span style="font-weight:800; color:#15803d; background:#dcfce7; padding:2px 8px; border-radius:10px;">${m.served}</span></td>
+            <td><span style="color:var(--veg); font-weight:700;">🥗 ${m.vegServed}</span></td>
+            <td><span style="color:var(--nonveg); font-weight:700;">🍗 ${m.nonvegServed}</span></td>
+            <td><span style="color:#d97706; font-weight:600;">${pending}</span></td>
+            <td><span style="font-weight:800; color:${turnout >= 80 ? '#15803d' : '#b45309'};">${turnout}%</span></td>
+          </tr>
+        `;
+      });
+      tbody.innerHTML = html;
+    }
+
+    function renderCommitteeDashboard() {
+      const bookings = appState.bookings || [];
+      const totalBookingsEl = document.getElementById('admin-total-bookings');
+      if (totalBookingsEl) totalBookingsEl.textContent = bookings.length;
+
+      const todayStr = new Date().toISOString().split('T')[0];
+      const now = new Date();
+      const currentMonth = now.getMonth();
+      const currentYear = now.getFullYear();
+
+      let todayBooked = 0, todayServed = 0, todayVeg = 0, todayNonVeg = 0;
+      let monthBooked = 0, monthServed = 0, monthVeg = 0, monthNonVeg = 0;
+
+      bookings.forEach(b => {
+        const isServed = b.status && b.status.includes('Served');
+        if (b.date === todayStr || b.servedDate === todayStr) {
+          todayBooked++;
+          if (isServed) {
+            todayServed++;
+            if (b.mealType === 'veg') todayVeg++;
+            else todayNonVeg++;
+          }
+        }
+        const bDate = new Date(b.date || b.servedDate);
+        if (!isNaN(bDate.getTime()) && bDate.getMonth() === currentMonth && bDate.getFullYear() === currentYear) {
+          monthBooked++;
+          if (isServed) {
+            monthServed++;
+            if (b.mealType === 'veg') monthVeg++;
+            else monthNonVeg++;
+          }
+        }
+      });
+
+      const setEl = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      setEl('committee-today-served-count', `${todayServed} / ${todayBooked}`);
+      setEl('committee-today-veg-nonveg', `Veg: ${todayVeg} | Non-Veg: ${todayNonVeg}`);
+      setEl('committee-month-served-count', `${monthServed} / ${monthBooked}`);
+      setEl('committee-month-veg-nonveg', `Veg: ${monthVeg} | Non-Veg: ${monthNonVeg}`);
+
+      // 1. Week-wise Ledger
+      renderCommitteeWeekLedger(bookings);
+
+      // 2. Month-wise Ledger
+      renderCommitteeMonthLedger(bookings);
+
+      // 3. Collapsible detailed individual employee audit log
+      const tbody = document.getElementById('admin-bookings-tbody');
+      if (tbody) {
+        if (bookings.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; color:var(--text-muted); padding:14px;">No booking records found.</td></tr>';
+        } else {
+          let html = '';
+          bookings.forEach(b => {
+            const isVeg = b.mealType === 'veg';
+            const color = isVeg ? 'var(--veg)' : 'var(--accent)';
+            const isServed = b.status && b.status.includes('Served');
+            const email = b.email || '';
+            html += `
+              <tr>
+                <td>${b.dateDisplay || b.date}</td>
+                <td><strong>${b.name || '—'}</strong></td>
+                <td>${b.empId || ''}${email ? ` <span style="color:#64748b; font-size:0.75rem;">(${email})</span>` : ''}</td>
+                <td><span style="color:${color}; font-weight:700;">${(b.mealType || '').toUpperCase()}</span></td>
+                <td><code>${b.tokenCode || ''}</code></td>
+                <td>
+                  <span style="font-size:0.75rem; padding:2px 8px; border-radius:10px; font-weight:700; background:${isServed ? '#dcfce7' : '#fef3c7'}; color:${isServed ? '#15803d' : '#92400e'};">
+                    ${isServed ? `Served ✅ ${b.servedAt || ''}` : 'Confirmed'}
+                  </span>
+                </td>
+              </tr>
+            `;
+          });
+          tbody.innerHTML = html;
+        }
+      }
+    }
+
+    // Export Bookings to CSV
+    function exportBookingsToCSV() {
+      if (appState.bookings.length === 0) {
+        showToast("No data to export", "⚠️");
+        return;
+      }
+
+      let csv = "Date,Employee Name,Employee ID,Meal Type,Token Code,Status,Notes\n";
+      appState.bookings.forEach(b => {
+        csv += `"${b.dateDisplay || b.date}","${b.name}","${b.empId}","${b.mealType}","${b.tokenCode}","${b.status || 'Confirmed'}","${b.notes || ''}"\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute("download", `onix_lunch_bookings_${new Date().toISOString().split('T')[0]}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      showToast("CSV file downloaded successfully!", "📥");
+    }
+
+    function openPosterWindow() {
+      var currentUrl = window.location.href.split('?')[0].split('#')[0];
+      if (currentUrl.endsWith('index.html')) {
+        currentUrl = currentUrl.replace('index.html', '');
+      }
+      var tpl = document.getElementById('poster-template');
+      if (tpl) {
+        var win = window.open('', '_blank');
+        if (win) {
+          var html = tpl.innerHTML.replace(/{{PORTAL_URL}}/g, currentUrl)
+                                  .replace(/{{ENCODED_URL}}/g, encodeURIComponent(currentUrl));
+          win.document.open();
+          win.document.write(html);
+          win.document.close();
+          return;
+        }
+      }
+      window.open('poster.html', '_blank');
+    }
+
+
+    // Seed realistic sample data
+    function seedDemoData() {
+      const sampleNames = [
+        { name: "Amit Kulkarni", id: "ONIX101", type: "veg" },
+        { name: "Pooja Patil", id: "ONIX102", type: "veg" },
+        { name: "Suresh Deshmukh", id: "ONIX103", type: "nonveg" },
+        { name: "Neha Joshi", id: "ONIX104", type: "veg" },
+        { name: "Vikram Rane", id: "ONIX105", type: "nonveg" },
+        { name: "Aniket Shinde", id: "ONIX106", type: "veg" },
+        { name: "Sneha More", id: "ONIX107", type: "veg" },
+        { name: "Ganesh Jadhav", id: "ONIX108", type: "nonveg" }
+      ];
+
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const dateStr = tomorrow.toISOString().split('T')[0];
+      const dateDisplay = tomorrow.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+      const newBookings = sampleNames.map((s, idx) => ({
+        id: 'BK-' + (Date.now() + idx),
+        date: dateStr,
+        dateDisplay: dateDisplay,
+        name: s.name,
+        empId: s.id,
+        mealType: s.type,
+        notes: "",
+        tokenCode: `ONIX-${s.type === 'veg' ? 'V' : 'N'}${100 + idx}`,
+        status: 'Confirmed',
+        timestamp: "04:30 PM"
+      }));
+
+      appState.bookings = [...newBookings, ...appState.bookings];
+      localStorage.setItem('onix_bookings', JSON.stringify(appState.bookings));
+      renderCommitteeDashboard();
+      showToast("Sample data loaded successfully!", "🌱");
+    }
+
+    function clearAllData() {
+      if (confirm("Are you sure you want to clear local bookings?")) {
+        appState.bookings = [];
+        appState.activeUserPass = null;
+        localStorage.removeItem('onix_bookings');
+        localStorage.removeItem('onix_active_pass');
+        renderCommitteeDashboard();
+        showToast("Bookings cleared", "🗑️");
+      }
+    }
+
+    // ==========================================
+    // TOAST NOTIFICATION UTILITY
+    // ==========================================
+    function showToast(msg, icon = "✅") {
+      const toast = document.getElementById('toast-bar');
+      document.getElementById('toast-icon').textContent = icon;
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    // Server API Sync Helper (falls back to local storage)
+    function trySyncServer(endpoint, payload) {
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(res => res.json())
+        .then(data => {
+          document.getElementById('sync-status').textContent = 'Server Connected (Live Sync)';
+        })
+        .catch(err => {
+          document.getElementById('sync-status').textContent = 'Local Storage Mode';
+        });
+    }
+
+    // Initial render
+    initDeviceProfile();
+    updateVendorServedSummary();
+    renderWeeklyMenu();
+    renderMealPass();
+    const savedGasUrl = getActiveGasUrl();
+    const gasInput = document.getElementById('gas-webhook-url');
+    if (gasInput && savedGasUrl) gasInput.value = savedGasUrl;
+  </script>
+
+  <!-- Standalone Poster Template (Never 404s!) -->
+  <template id="poster-template">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Onix Cafeteria | Printable Daily Lunch Poster</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      background: #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .poster-container {
+      width: 210mm;
+      min-height: 297mm;
+      background: #ffffff;
+      padding: 20mm 18mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      border: 8px solid #30496d;
+    }
+    .top-logo {
+      height: 55px;
+      margin-bottom: 10px;
+      object-fit: contain;
+    }
+    .title-banner {
+      background: #30496d;
+      color: white;
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      color: #30496d;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .qr-card {
+      background: #f8fafc;
+      border: 3px dashed #30496d;
+      border-radius: 20px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+    .qr-img {
+      width: 220px;
+      height: 220px;
+      background: white;
+      border-radius: 8px;
+      padding: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .link-share-box {
+      background: #f1f5f9;
+      border: 2px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 10px 14px;
+      width: 100%;
+      max-width: 520px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .link-url-text {
+      font-family: monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #30496d;
+      word-break: break-all;
+      text-align: left;
+    }
+    .copy-btn {
+      background: #f46262;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover {
+      background: #e04f4f;
+    }
+    .cutoff-alert {
+      background: #ffeaea;
+      border: 2px solid #f46262;
+      color: #b91c1c;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 22px;
+      width: 100%;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .step-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .step-num {
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      background: #f46262;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 26px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+    }
+    .step-title {
+      font-weight: 700;
+      color: #30496d;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+    .step-desc {
+      font-size: 0.78rem;
+      color: #64748b;
+      line-height: 1.35;
+    }
+    .walkin-banner {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-left: 5px solid #f59e0b;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 0.82rem;
+      color: #92400e;
+      width: 100%;
+      margin-top: auto;
+    }
+    .print-controls {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      gap: 10px;
+      z-index: 100;
+    }
+    .ctrl-btn {
+      background: #30496d;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .ctrl-btn.print {
+      background: #f46262;
+    }
+    @media print {
+      body { background: transparent; padding: 0; }
+      .poster-container { box-shadow: none; border: 4px solid #30496d; width: 100%; min-height: auto; }
+      .print-controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-controls">
+    <button class="ctrl-btn" onclick="promptChangeUrl()">🔗 Set Custom Live URL</button>
+    <button class="ctrl-btn print" onclick="window.print()">🖨️ Print Poster (A4)</button>
+  </div>
+
+  <div class="poster-container">
+    <img src="data:image/png;base64,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" alt="Onix Logo" class="top-logo">
+    <div class="title-banner">DAILY LUNCH BOOKING PORTAL</div>
+    <p class="subtitle">Mark your lunch availability for tomorrow's lunch</p>
+
+    <!-- REAL DYNAMIC SCANNABLE QR CODE -->
+    <div class="qr-card">
+      <img id="scannable-qr-img" class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1GAuOvWEfylH6BulYR0rkYNdkP6LS6tz5s6TPTyp5Wr4%2Fedit" alt="Scannable QR Code">
+      <p style="font-size:0.75rem; color:#64748b; margin-top:8px;">Scan with iPhone or Android Camera</p>
+    </div>
+
+    <!-- Direct Copyable Link for WhatsApp / Slack / Teams Pinning -->
+    <div class="link-share-box">
+      <div style="text-align:left;">
+        <span style="font-size:0.68rem; text-transform:uppercase; color:#64748b; font-weight:700; display:block;">Or Open / Share Direct Link:</span>
+        <span class="link-url-text" id="display-portal-link">Loading portal link...</span>
+      </div>
+      <button class="copy-btn" onclick="copyPortalLink()">📋 Copy Link</button>
+    </div>
+
+    <div class="cutoff-alert">
+      ⏰ BOOKING CUTOFF: TODAY 11:59 PM (EOD)
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-box">
+        <span class="step-num">1</span>
+        <div class="step-title">Scan QR / Open Link</div>
+        <div class="step-desc">Open portal on your mobile using camera or WhatsApp pinned link.</div>
+      </div>
+      <div class="step-box">
+        <span class="step-num">2</span>
+        <div class="step-title">Choose Veg / Non-Veg</div>
+        <div class="step-desc">Select your lunch preference before 11:59 PM tonight.</div>
+      </div>
+      <div class="step-box">
+        <span class="step-num">3</span>
+        <div class="step-title">Show Token Code</div>
+        <div class="step-desc">Show your confirmation pass to the vendor at the line to take food.</div>
+      </div>
+    </div>
+
+    <div class="walkin-banner">
+      <strong>⚠️ Forgot to book yesterday?</strong><br>
+      Walk-ins are welcomed! Please sign your name in the physical vendor register at the cafeteria serving counter to receive a plate from the daily buffer stock.
+    </div>
+  </div>
+
+  <script>
+    // Determine active URL
+    let activeUrl = window.location.href.replace('poster.html', 'index.html');
+    if (activeUrl.startsWith('file:///')) {
+      // Default to suggested live web address
+      activeUrl = "https://onix-cafeteria.netlify.app";
+    }
+
+    function updateQrAndLink(url) {
+      activeUrl = url;
+      document.getElementById('display-portal-link').textContent = activeUrl;
+      const encoded = encodeURIComponent(activeUrl);
+      document.getElementById('scannable-qr-img').src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encoded}`;
+    }
+
+    function promptChangeUrl() {
+      const customUrl = prompt("Enter your Live Web URL (e.g., https://your-site.netlify.app):", activeUrl);
+      if (customUrl && customUrl.trim() !== '') {
+        updateQrAndLink(customUrl.trim());
+      }
+    }
+
+    function copyPortalLink() {
+      navigator.clipboard.writeText(activeUrl).then(() => {
+        alert("✅ Link copied to clipboard! You can now paste and pin it in your WhatsApp / Teams group.");
+      }).catch(() => {
+        prompt("Copy this link:", activeUrl);
+      });
+    }
+
+    updateQrAndLink(activeUrl);
+  </script>
+</body>
+</html>
+
+  </template>
+
+</body>
+</html>
