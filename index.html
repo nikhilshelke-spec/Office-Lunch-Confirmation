@@ -924,6 +924,21 @@
                   <span style="font-size:0.8rem; font-weight:700; display:block;">Whole Month</span>
                   <span style="font-size:0.68rem; color:var(--text-muted); display:block;">All Working Days</span>
                 </div>
+                <div class="meal-radio-card" id="period-custom" onclick="selectBookingPeriod('custom')" style="padding:10px 6px;">
+                  <span style="font-size:1.1rem; display:block;">🎯</span>
+                  <span style="font-size:0.8rem; font-weight:700; display:block;">Specific Date</span>
+                  <span style="font-size:0.68rem; color:var(--text-muted); display:block;">Pick Any Day</span>
+                </div>
+              </div>
+
+              <!-- Manual / Specific Date Picker Box -->
+              <div id="custom-date-container" style="display:none; margin-bottom:10px; background:#ffffff; border:1.5px solid #30496d; border-radius:10px; padding:12px 14px;">
+                <label style="font-size:0.82rem; font-weight:700; color:#30496d; display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <span>📅 Choose Your Lunch Date:</span>
+                  <span style="font-size:0.72rem; color:#047857; background:#dcfce7; padding:2px 8px; border-radius:10px;">Mon - Fri Only</span>
+                </label>
+                <input type="date" id="custom-booking-date" onchange="calculateSelectedDates()" style="width:100%; padding:10px 12px; font-size:0.95rem; font-weight:700; border:1px solid #cbd5e1; border-radius:8px; color:#1e293b; background:#f8fafc;">
+                <p style="font-size:0.72rem; color:#64748b; margin-top:4px; margin-bottom:0;">You can book for any specific working day in advance.</p>
               </div>
 
               <!-- Selected Dates Summary Badge -->
@@ -931,6 +946,12 @@
                 <strong>Selected Dates:</strong> <span id="selected-dates-text">Calculating dates...</span>
               </div>
             </div>
+
+            <!-- Hidden Form & Iframe for High-Reliability Google Sheets Sync (Bypasses SSO & CORS) -->
+            <form id="gas-hidden-form" target="gas-hidden-iframe" method="POST" action="https://script.google.com/a/macros/onixnet.com/s/AKfycbzTtdhXXnLHZqxmKxsKq-HwIKjz-VGakpshfOnZck-GFVL8xnt2Fvwe3Mhq_c3WPXp4hw/exec" style="display:none;">
+              <input type="hidden" name="payload" id="gas-hidden-payload">
+            </form>
+            <iframe name="gas-hidden-iframe" id="gas-hidden-iframe" style="display:none; width:0; height:0; border:none;"></iframe>
 
 
 
@@ -1550,7 +1571,7 @@
     // ==========================================
     // INITIAL DATA & STORAGE SETUP
     // ==========================================
-    const DEFAULT_GAS_URL = "https://script.google.com/macros/s/AKfycbzTtdhXXnLHZqxmKxsKq-HwIKjz-VGakpshfOnZck-GFVL8xnt2Fvwe3Mhq_c3WPXp4hw/exec";
+    const DEFAULT_GAS_URL = "https://script.google.com/a/macros/onixnet.com/s/AKfycbzTtdhXXnLHZqxmKxsKq-HwIKjz-VGakpshfOnZck-GFVL8xnt2Fvwe3Mhq_c3WPXp4hw/exec";
     const ONIX_DOMAIN_GAS_URL = "https://script.google.com/a/macros/onixnet.com/s/AKfycbzTtdhXXnLHZqxmKxsKq-HwIKjz-VGakpshfOnZck-GFVL8xnt2Fvwe3Mhq_c3WPXp4hw/exec";
 
     function getActiveGasUrl() {
@@ -1800,7 +1821,18 @@
 
         const payloadStr = JSON.stringify(payload);
 
-        // 1. Send via POST with text/plain (Standard CORS bypass for Apps Script)
+        // 1. Submit via hidden iframe form (Top reliability: passes Google Workspace & Okta domain cookies)
+        try {
+          const hiddenForm = document.getElementById('gas-hidden-form');
+          const hiddenPayload = document.getElementById('gas-hidden-payload');
+          if (hiddenForm && hiddenPayload) {
+            hiddenForm.action = gasUrl;
+            hiddenPayload.value = payloadStr;
+            hiddenForm.submit();
+          }
+        } catch(e) {}
+
+        // 2. Parallel Send via POST with text/plain (Standard CORS bypass for Apps Script)
         try {
           fetch(gasUrl, {
             method: 'POST',
@@ -1821,7 +1853,7 @@
           }
         } catch(e) {}
 
-        // 2. Background beacon for mobile reliability
+        // 3. Background beacon for mobile reliability
         try {
           if (navigator.sendBeacon) {
             const blob = new Blob([payloadStr], { type: 'text/plain;charset=utf-8' });
@@ -1829,7 +1861,7 @@
           }
         } catch(e) {}
 
-        // 3. Fallback GET ping
+        // 4. Fallback GET ping
         try {
           const pingUrl = gasUrl + (gasUrl.includes('?') ? '&' : '?') + 'data=' + encodeURIComponent(payloadStr);
           const img = new Image();
@@ -1864,10 +1896,29 @@
 
     function selectBookingPeriod(period) {
       activeBookingPeriod = period;
-      ['tomorrow', 'thisweek', 'nextweek', 'month'].forEach(p => {
+      ['tomorrow', 'thisweek', 'nextweek', 'month', 'custom'].forEach(p => {
         const el = document.getElementById(`period-${p}`);
         if (el) el.className = (p === period) ? 'meal-radio-card selected-veg' : 'meal-radio-card';
       });
+
+      const customBox = document.getElementById('custom-date-container');
+      if (customBox) {
+        customBox.style.display = (period === 'custom') ? 'block' : 'none';
+        if (period === 'custom') {
+          const dateInput = document.getElementById('custom-booking-date');
+          if (dateInput && !dateInput.value) {
+            const nextDay = new Date();
+            nextDay.setDate(nextDay.getDate() + 1);
+            while (nextDay.getDay() === 0 || nextDay.getDay() === 6) {
+              nextDay.setDate(nextDay.getDate() + 1);
+            }
+            const iso = nextDay.toISOString().split('T')[0];
+            dateInput.value = iso;
+            dateInput.min = iso;
+          }
+        }
+      }
+
       calculateSelectedDates();
     }
 
@@ -1893,13 +1944,11 @@
       if (activeBookingPeriod === 'tomorrow') {
         const d = new Date();
         d.setDate(d.getDate() + 1);
-        // If tomorrow is Saturday, skip to Monday
         while (!isWorkingDay(d)) {
           d.setDate(d.getDate() + 1);
         }
         dates.push(formatDay(d));
       } else if (activeBookingPeriod === 'thisweek') {
-        // Remaining days of current week (Mon-Fri)
         const currentDay = now.getDay();
         for (let i = 1; i <= 5; i++) {
           const d = new Date();
@@ -1910,7 +1959,6 @@
           }
         }
       } else if (activeBookingPeriod === 'nextweek') {
-        // Next week Monday to Friday (5 full working days)
         const d = new Date();
         const currentDay = d.getDay();
         const daysToNextMonday = ((8 - currentDay) % 7) || 7;
@@ -1922,12 +1970,33 @@
           dates.push(formatDay(wd));
         }
       } else if (activeBookingPeriod === 'month') {
-        // Next 30 calendar days (strictly working days only)
         for (let i = 1; i <= 30; i++) {
           const d = new Date();
           d.setDate(now.getDate() + i);
           if (isWorkingDay(d)) {
             dates.push(formatDay(d));
+          }
+        }
+      } else if (activeBookingPeriod === 'custom') {
+        const dateInput = document.getElementById('custom-booking-date');
+        let val = dateInput ? dateInput.value : '';
+        if (!val) {
+          const d = new Date();
+          d.setDate(d.getDate() + 1);
+          while (!isWorkingDay(d)) d.setDate(d.getDate() + 1);
+          val = d.toISOString().split('T')[0];
+          if (dateInput) {
+            dateInput.value = val;
+            dateInput.min = val;
+          }
+        }
+        if (val) {
+          const parts = val.split('-');
+          const chosen = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+          if (!isWorkingDay(chosen)) {
+            alert("⚠️ सूचना: शनिवार व रविवारी कॅफेटेरिया बंद असतो. कृपया सोमवार ते शुक्रवार मधील कामाचा दिवस निवडा.");
+          } else {
+            dates.push(formatDay(chosen));
           }
         }
       }
@@ -1936,12 +2005,23 @@
       const summaryText = dates.map(d => `${d.dayName.slice(0,3)} ${d.display}`).join(', ');
       const summaryEl = document.getElementById('selected-dates-text');
       if (summaryEl) {
-        summaryEl.innerHTML = `<strong>${dates.length} Working Days:</strong> ${summaryText}`;
+        summaryEl.innerHTML = dates.length > 0 
+          ? `<strong>${dates.length} Working Day(s):</strong> ${summaryText}`
+          : `<span style="color:#ef4444; font-weight:700;">Please select a valid working day (Mon-Fri)</span>`;
       }
 
       const tomorrowLabel = document.getElementById('label-tomorrow-date');
       if (tomorrowLabel && dates.length > 0 && activeBookingPeriod === 'tomorrow') {
         tomorrowLabel.textContent = dates[0].display;
+      }
+
+      const submitBtn = document.getElementById('btn-submit-booking');
+      if (submitBtn && dates.length > 0) {
+        submitBtn.innerHTML = (activeBookingPeriod === 'tomorrow')
+          ? `<span>✅ Confirm Tomorrow's Booking (${dates[0].display})</span>`
+          : (activeBookingPeriod === 'custom')
+          ? `<span>✅ Confirm Specific Booking (${dates[0].display})</span>`
+          : `<span>✅ Confirm Advance Booking (${dates.length} Days)</span>`;
       }
     }
 
@@ -2471,7 +2551,44 @@
     function resetAuthModalToInput() {}
     function promptSwitchOnixAccount() {}
 
+    function cleanJunkTestData() {
+      try {
+        const junkWords = ['cvbnm', 'asdf', 'qwerty', 'zxcv', 'test', 'demo', '1234', 'admin'];
+        const isJunk = (val) => {
+          if (!val) return false;
+          const v = String(val).toLowerCase().trim();
+          return junkWords.some(j => v === j || v === j + '@onix.com' || v.startsWith(j + '@'));
+        };
+
+        ['onix_saved_empid', 'onix_saved_email', 'onix_saved_name', 'onix_auth_email', 'onix_auth_name', 'onix_auth_empid'].forEach(k => {
+          const v = localStorage.getItem(k);
+          if (v && isJunk(v)) {
+            localStorage.removeItem(k);
+          }
+        });
+
+        if (appState.bookings && appState.bookings.length > 0) {
+          const beforeLen = appState.bookings.length;
+          appState.bookings = appState.bookings.filter(b => {
+            return !isJunk(b.empId) && !isJunk(b.name) && !isJunk(b.email) && !(b.tokenCode && b.tokenCode.startsWith('ONIX-'));
+          });
+          if (appState.bookings.length !== beforeLen) {
+            localStorage.setItem('onix_bookings', JSON.stringify(appState.bookings));
+            if (appState.activeUserPass && (isJunk(appState.activeUserPass.empId) || (appState.activeUserPass.tokenCode && appState.activeUserPass.tokenCode.startsWith('ONIX-')))) {
+              appState.activeUserPass = appState.bookings[0] || null;
+              if (appState.activeUserPass) {
+                localStorage.setItem('onix_active_pass', JSON.stringify(appState.activeUserPass));
+              } else {
+                localStorage.removeItem('onix_active_pass');
+              }
+            }
+          }
+        }
+      } catch(e) {}
+    }
+
     function initDeviceProfile() {
+      cleanJunkTestData();
       const urlParams = new URLSearchParams(window.location.search);
       const urlEmail = urlParams.get('email');
       const urlId = urlParams.get('id') || urlParams.get('empid');
@@ -2490,6 +2607,7 @@
     // Sequential Daily Token & Booking Submission
     function handleBookingSubmit(e) {
       if (e && e.preventDefault) e.preventDefault();
+      cleanJunkTestData();
 
       const mealTypeEl = document.getElementById('selected-meal-type');
       const submitBtn = document.getElementById('btn-submit-booking');
@@ -2500,21 +2618,37 @@
       const urlId = urlParams.get('id') || urlParams.get('empid') || '';
       const urlName = urlParams.get('name') || '';
 
-      let email = urlEmail || localStorage.getItem('onix_auth_email') || localStorage.getItem('onix_saved_email') || '';
-      if (!email || !email.includes('@')) {
+      const junkWords = ['cvbnm', 'asdf', 'qwerty', 'zxcv', 'test', 'demo', '1234'];
+      const isJunkStr = (val) => {
+        if (!val) return false;
+        const v = String(val).toLowerCase().trim();
+        return junkWords.some(j => v === j || v === j + '@onix.com' || v.startsWith(j + '@'));
+      };
+
+      let rawSavedEmail = localStorage.getItem('onix_auth_email') || localStorage.getItem('onix_saved_email') || '';
+      if (isJunkStr(rawSavedEmail)) rawSavedEmail = '';
+
+      let email = urlEmail || rawSavedEmail;
+      if (!email || !email.includes('@') || isJunkStr(email)) {
         email = 'onix.staff@onixnet.com';
       } else {
         email = email.trim().toLowerCase();
         try { localStorage.setItem('onix_auth_email', email); } catch(err) {}
       }
 
-      let empId = urlId || localStorage.getItem('onix_auth_empid') || localStorage.getItem('onix_saved_empid') || '';
-      if (!empId) {
+      let rawSavedId = localStorage.getItem('onix_auth_empid') || localStorage.getItem('onix_saved_empid') || '';
+      if (isJunkStr(rawSavedId)) rawSavedId = '';
+
+      let empId = urlId || rawSavedId;
+      if (!empId || isJunkStr(empId)) {
         empId = email.split('@')[0].toUpperCase();
       }
 
-      let name = urlName || localStorage.getItem('onix_auth_name') || localStorage.getItem('onix_saved_name') || '';
-      if (!name) {
+      let rawSavedName = localStorage.getItem('onix_auth_name') || localStorage.getItem('onix_saved_name') || '';
+      if (isJunkStr(rawSavedName)) rawSavedName = '';
+
+      let name = urlName || rawSavedName;
+      if (!name || isJunkStr(name)) {
         name = email.split('@')[0].replace('.', ' ').replace(/(^|\s)\S/g, l => l.toUpperCase());
       }
 
@@ -2639,12 +2773,14 @@
 
     // Export Day-wise Booking & Served Ledger (Excel Ready CSV with BOM)
     function exportDaywiseLedger() {
+      cleanJunkTestData();
       if (!appState.bookings || appState.bookings.length === 0) {
         showToast("No bookings to export!", "⚠️");
         return;
       }
 
-      const sorted = [...appState.bookings].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+      const validBookings = appState.bookings.filter(b => b.empId !== 'cvbnm' && b.name !== 'cvbnm');
+      const sorted = [...validBookings].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 
       let csvContent = "\uFEFF"; // UTF-8 BOM for Microsoft Excel
       csvContent += "Booking Date,Day,Token Serial,Employee ID,Onix Email,Employee Name,Meal Preference,Served Status,Served Time,Booking Timestamp\n";
@@ -3228,7 +3364,7 @@
         empId: s.id,
         mealType: s.type,
         notes: "",
-        tokenCode: `ONIX-${s.type === 'veg' ? 'V' : 'N'}${100 + idx}`,
+        tokenCode: (idx + 1 < 10 ? 'A0' : 'A') + (idx + 1),
         status: 'Confirmed',
         timestamp: "04:30 PM"
       }));
@@ -3240,13 +3376,17 @@
     }
 
     function clearAllData() {
-      if (confirm("Are you sure you want to clear local bookings?")) {
+      if (confirm("Are you sure you want to clear local test bookings and reset cache?")) {
         appState.bookings = [];
         appState.activeUserPass = null;
         localStorage.removeItem('onix_bookings');
         localStorage.removeItem('onix_active_pass');
+        ['onix_saved_empid', 'onix_saved_email', 'onix_saved_name', 'onix_auth_email', 'onix_auth_name', 'onix_auth_empid'].forEach(k => {
+          localStorage.removeItem(k);
+        });
         renderCommitteeDashboard();
-        showToast("Bookings cleared", "🗑️");
+        renderMealPass();
+        showToast("Bookings & local test cache cleared!", "🗑️");
       }
     }
 
